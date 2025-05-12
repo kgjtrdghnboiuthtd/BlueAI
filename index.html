@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caso de Éxito: Blue AI & Instituto Éclat Parfait</title>
+    <title data-i18n="page_title">Caso de Éxito: Blue AI & Instituto Eclat Parfait</title>
     <!-- Ajout de Font Awesome pour les icônes modernes -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -51,6 +51,45 @@
             padding: 20px 0;
             position: relative;
             z-index: 1;
+        }
+
+        /* Selector de idioma / Language selector */
+        .language-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 5px;
+        }
+        
+        .language-selector .lang-option {
+            background-color: var(--bg-white);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--text-medium);
+            text-decoration: none;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: var(--transition-standard);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .language-selector .lang-option:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .language-selector .lang-option.active {
+            background-color: var(--alan-blue);
+            color: white;
+            border-color: var(--alan-blue);
         }
 
         /* Header / Hero Section - Modernisé */
@@ -1185,10 +1224,15 @@
             }
             
             .floating-badge {
-                top: 20px;
+                top: 70px; /* Ajusté pour laisser de la place au sélecteur de langue */
                 right: 20px;
                 font-size: 0.8em;
                 padding: 6px 12px;
+            }
+            
+            .language-selector {
+                flex-wrap: wrap;
+                justify-content: flex-end;
             }
             
             .newsletter-popup {
@@ -1226,12 +1270,26 @@
             .shape-divider svg {
                 height: 50px;
             }
+            
+            .language-selector .lang-option {
+                width: 30px;
+                height: 30px;
+                font-size: 0.8em;
+            }
         }
     </style>
 </head>
 <body>
-    <span class="floating-badge">
-        <i class="fas fa-star"></i> Nouveau case study
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <a class="lang-option" data-lang="es">ES</a>
+        <a class="lang-option" data-lang="fr">FR</a>
+        <a class="lang-option" data-lang="en">EN</a>
+        <a class="lang-option" data-lang="de">DE</a>
+    </div>
+    
+    <span class="floating-badge" data-i18n="new_case_study">
+        <i class="fas fa-star"></i> <span>Nuevo caso de éxito</span>
     </span>
     
     <a href="#" class="back-to-top" id="backToTop">
@@ -1241,10 +1299,10 @@
     <header class="hero">
         <div class="container">
             <div class="logo-placeholder">Blue AI</div>
-            <h1>Cómo el Instituto "Éclat Parfait" Revolucionó su Gestión y Aumentó Ingresos</h1>
-            <p class="subtitle">Descubre cómo nuestra solución de IA para WhatsApp "Blue AI" por solo 200€/mes transformó desafíos en oportunidades de crecimiento.</p>
-            <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">
-                <i class="fas fa-calendar-check"></i> Solicitar Demo Gratuita
+            <h1 data-i18n="hero_title">Cómo el Instituto Eclat Parfait Revolucionó su Gestión y Aumentó Ingresos</h1>
+            <p class="subtitle" data-i18n="hero_subtitle">Descubre cómo nuestra solución de IA para WhatsApp Blue AI por solo 200€/mes transformó desafíos en oportunidades de crecimiento.</p>
+            <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank" data-i18n="hero_cta">
+                <i class="fas fa-calendar-check"></i> <span>Solicitar Demo Gratuita</span>
             </a>
         </div>
     </header>
@@ -1252,23 +1310,23 @@
     <main>
         <section id="el-desafio" class="alternate-bg">
             <div class="container">
-                <h2 class="fade-in-up">El <span class="highlight-blue">Desafío</span>: Una Carga Operativa Costosa</h2>
+                <h2 class="fade-in-up" data-i18n="challenge_title">El <span class="highlight-blue">Desafío</span>: Una Carga Operativa Costosa</h2>
                 <div class="info-grid">
                     <div class="info-card fade-in-up">
-                        <h3><span class="emoji-title">🤯</span>Sobrecarga de Trabajo</h3>
-                        <p>15-20 llamadas y mensajes diarios interrumpían constantemente los tratamientos y la concentración del personal.</p>
+                        <h3><span class="emoji-title">🤯</span><span data-i18n="challenge_card1_title">Sobrecarga de Trabajo</span></h3>
+                        <p data-i18n="challenge_card1_text">15-20 llamadas y mensajes diarios interrumpían constantemente los tratamientos y la concentración del personal.</p>
                     </div>
                     <div class="info-card fade-in-up" data-delay="100">
-                        <h3><span class="emoji-title">💸</span>Pérdidas por "No-Shows"</h3>
-                        <p>Un promedio de <strong>8 citas perdidas al mes</strong>, resultando en una pérdida directa de <strong>480€</strong>.</p>
+                        <h3><span class="emoji-title">💸</span><span data-i18n="challenge_card2_title">Pérdidas por No-Shows</span></h3>
+                        <p data-i18n="challenge_card2_text">Un promedio de <strong>8 citas perdidas al mes</strong>, resultando en una pérdida directa de <strong>480€</strong>.</p>
                     </div>
                     <div class="info-card fade-in-up" data-delay="200">
-                        <h3><span class="emoji-title">📉</span>Oportunidades Desaprovechadas</h3>
-                        <p>Entre 3 y 5 clientes potenciales no captados mensualmente por falta de respuesta inmediata fuera de horario.</p>
+                        <h3><span class="emoji-title">📉</span><span data-i18n="challenge_card3_title">Oportunidades Desaprovechadas</span></h3>
+                        <p data-i18n="challenge_card3_text">Entre 3 y 5 clientes potenciales no captados mensualmente por falta de respuesta inmediata fuera de horario.</p>
                     </div>
                     <div class="info-card fade-in-up" data-delay="300">
-                        <h3><span class="emoji-title">⏳</span>Tiempo Malgastado</h3>
-                        <p>Aproximadamente <strong>40 horas mensuales</strong> dedicadas a tareas administrativas repetitivas y de bajo valor.</p>
+                        <h3><span class="emoji-title">⏳</span><span data-i18n="challenge_card4_title">Tiempo Malgastado</span></h3>
+                        <p data-i18n="challenge_card4_text">Aproximadamente <strong>40 horas mensuales</strong> dedicadas a tareas administrativas repetitivas y de bajo valor.</p>
                     </div>
                 </div>
             </div>
@@ -1286,57 +1344,57 @@
                 </svg>
             </div>
             <div class="container">
-                <h2 class="fade-in-up">La <span class="highlight-blue">Solución</span>: "Blue AI" - Tu Asistente Inteligente</h2>
+                <h2 class="fade-in-up" data-i18n="solution_title">La <span class="highlight-blue">Solución</span>: Blue AI - Tu Asistente Inteligente</h2>
                 <div class="info-grid">
                     <div class="info-card fade-in-left">
-                        <h3><span class="emoji-title">🤖</span>Automatización 24/7</h3>
-                        <p>Respuestas instantáneas a preguntas frecuentes (tarifas, horarios, servicios) vía WhatsApp, disponibles a toda hora.</p>
+                        <h3><span class="emoji-title">🤖</span><span data-i18n="solution_card1_title">Automatización 24/7</span></h3>
+                        <p data-i18n="solution_card1_text">Respuestas instantáneas a preguntas frecuentes (tarifas, horarios, servicios) vía WhatsApp, disponibles a toda hora.</p>
                     </div>
                     <div class="info-card fade-in-up" data-delay="100">
-                        <h3><span class="emoji-title">🗓️</span>Gestión de Citas Eficaz</h3>
-                        <p>Programación inteligente de citas, sincronizada con la agenda del salón, y envío de confirmaciones automáticas.</p>
+                        <h3><span class="emoji-title">🗓️</span><span data-i18n="solution_card2_title">Gestión de Citas Eficaz</span></h3>
+                        <p data-i18n="solution_card2_text">Programación inteligente de citas, sincronizada con la agenda del salón, y envío de confirmaciones automáticas.</p>
                     </div>
                     <div class="info-card fade-in-right" data-delay="200">
-                        <h3><span class="emoji-title">🔔</span>Recordatorios Inteligentes</h3>
-                        <p>Reducción drástica de "no-shows" gracias a recordatorios personalizados enviados 48h y 24h antes de la cita.</p>
+                        <h3><span class="emoji-title">🔔</span><span data-i18n="solution_card3_title">Recordatorios Inteligentes</span></h3>
+                        <p data-i18n="solution_card3_text">Reducción drástica de No-Shows gracias a recordatorios personalizados enviados 48h y 24h antes de la cita.</p>
                     </div>
                     <div class="info-card fade-in-left" data-delay="300">
-                        <h3><span class="emoji-title">🎯</span>Marketing Dirigido</h3>
-                        <p>Capacidad para difundir promociones y novedades de forma segmentada a la base de clientes existente.</p>
+                        <h3><span class="emoji-title">🎯</span><span data-i18n="solution_card4_title">Marketing Dirigido</span></h3>
+                        <p data-i18n="solution_card4_text">Capacidad para difundir promociones y novedades de forma segmentada a la base de clientes existente.</p>
                     </div>
                 </div>
-                <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--text-medium); font-weight: 500;" class="fade-in-up" data-delay="400">
+                <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--text-medium); font-weight: 500;" class="fade-in-up" data-delay="400" data-i18n="solution_price">
                     Todo esto por <strong style="background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">solo 200€ al mes</strong>, con una integración simple y rápida.
                 </p>
                 
                 <!-- ROI Calculator - New element -->
                 <div class="roi-calculator fade-in-up" data-delay="500">
-                    <h3>Calcula tu ROI con Blue AI</h3>
+                    <h3 data-i18n="calculator_title">Calcula tu ROI con Blue AI</h3>
                     <div class="calculator-form">
                         <div class="form-group">
-                            <label for="hoursWasted">Horas mensuales en tareas administrativas</label>
-                            <input type="number" id="hoursWasted" placeholder="Ej: 40" min="0" value="40">
+                            <label for="hoursWasted" data-i18n="calculator_hours">Horas mensuales en tareas administrativas</label>
+                            <input type="number" id="hoursWasted" data-i18n-placeholder="calculator_hours_placeholder" placeholder="Ej: 40" min="0" value="40">
                         </div>
                         <div class="form-group">
-                            <label for="hourlyRate">Valor de tu hora (€)</label>
-                            <input type="number" id="hourlyRate" placeholder="Ej: 15" min="0" value="15">
+                            <label for="hourlyRate" data-i18n="calculator_rate">Valor de tu hora (€)</label>
+                            <input type="number" id="hourlyRate" data-i18n-placeholder="calculator_rate_placeholder" placeholder="Ej: 15" min="0" value="15">
                         </div>
                         <div class="form-group">
-                            <label for="missedAppts">Citas perdidas al mes</label>
-                            <input type="number" id="missedAppts" placeholder="Ej: 8" min="0" value="8">
+                            <label for="missedAppts" data-i18n="calculator_missed">Citas perdidas al mes</label>
+                            <input type="number" id="missedAppts" data-i18n-placeholder="calculator_missed_placeholder" placeholder="Ej: 8" min="0" value="8">
                         </div>
                         <div class="form-group">
-                            <label for="apptValue">Valor promedio de cita (€)</label>
-                            <input type="number" id="apptValue" placeholder="Ej: 60" min="0" value="60">
+                            <label for="apptValue" data-i18n="calculator_value">Valor promedio de cita (€)</label>
+                            <input type="number" id="apptValue" data-i18n-placeholder="calculator_value_placeholder" placeholder="Ej: 60" min="0" value="60">
                         </div>
-                        <button type="button" class="calculate-btn" id="calculateRoi">
-                            <i class="fas fa-calculator"></i> Calcular mi ROI
+                        <button type="button" class="calculate-btn" id="calculateRoi" data-i18n="calculator_button">
+                            <i class="fas fa-calculator"></i> <span>Calcular mi ROI</span>
                         </button>
                     </div>
                     <div class="calculator-result" id="calculatorResult">
-                        <div class="result-heading">Tu ROI mensual con Blue AI:</div>
+                        <div class="result-heading" data-i18n="calculator_result_heading">Tu ROI mensual con Blue AI:</div>
                         <div class="result-figure" id="roiResult">600%</div>
-                        <div class="result-summary" id="roiSummary">Ahorras 1000€ al mes con una inversión de solo 200€</div>
+                        <div class="result-summary" id="roiSummary" data-i18n="calculator_result_summary">Ahorras 1000€ al mes con una inversión de solo 200€</div>
                     </div>
                 </div>
             </div>
@@ -1358,47 +1416,47 @@
                 </svg>
             </div>
             <div class="container">
-                <h2 class="fade-in-up">Resultados <span class="highlight-blue">Impactantes</span> en Solo 3 Meses</h2>
+                <h2 class="fade-in-up" data-i18n="results_title">Resultados <span class="highlight-blue">Impactantes</span> en Solo 3 Meses</h2>
                 <div class="results-showcase">
                     <div class="result-box fade-in-up">
                         <span class="value" id="value1" data-val="600">+600€</span>
-                        <span class="label">Ahorrados/mes (30h de tiempo recuperado)</span>
+                        <span class="label" data-i18n="results_box1">Ahorrados/mes (30h de tiempo recuperado)</span>
                     </div>
                     <div class="result-box fade-in-up" data-delay="100">
                         <span class="value" id="value2" data-val="360">+360€</span>
-                        <span class="label">Recuperados/mes (reducción de no-shows)</span>
+                        <span class="label" data-i18n="results_box2">Recuperados/mes (reducción de no-shows)</span>
                     </div>
                     <div class="result-box fade-in-up" data-delay="200">
                         <span class="value" id="value3" data-val="240">+240€</span>
-                        <span class="label">Generados/mes (nuevas reservas captadas)</span>
+                        <span class="label" data-i18n="results_box3">Generados/mes (nuevas reservas captadas)</span>
                     </div>
                 </div>
                 <div class="roi-summary fade-in-up" data-delay="300">
-                    <h3>Balance Financiero Impresionante</h3>
+                    <h3 data-i18n="financial_title">Balance Financiero Impresionante</h3>
                     <ul id="roiList">
-                        <li class="roi-item">Ingresos Adicionales/Ahorrados: <span class="figure">1200€/mes</span></li>
-                        <li class="roi-item">Costo de Blue AI: <span class="figure">200€/mes</span></li>
-                        <li class="roi-item">Beneficio Neto Mensual: <span class="figure">1000€/mes</span></li>
+                        <li class="roi-item"><span data-i18n="financial_line1">Ingresos Adicionales/Ahorrados:</span> <span class="figure">1200€/mes</span></li>
+                        <li class="roi-item"><span data-i18n="financial_line2">Costo de Blue AI:</span> <span class="figure">200€/mes</span></li>
+                        <li class="roi-item"><span data-i18n="financial_line3">Beneficio Neto Mensual:</span> <span class="figure">1000€/mes</span></li>
                     </ul>
-                    <span class="total-roi" id="totalRoi">Retorno de la Inversión (ROI): <i class="fas fa-arrow-up"></i> 500%!</span>
+                    <span class="total-roi" id="totalRoi" data-i18n="financial_roi">Retorno de la Inversión (ROI): <i class="fas fa-arrow-up"></i> 500%!</span>
                 </div>
             </div>
         </section>
 
         <section id="testimonio">
             <div class="container">
-                <h2 class="fade-in-up">Lo que Dicen <span class="highlight-blue">Nuestros Clientes</span></h2>
+                <h2 class="fade-in-up" data-i18n="testimonial_title">Lo que Dicen <span class="highlight-blue">Nuestros Clientes</span></h2>
                 
                 <div class="testimonial-carousel fade-in-up" data-delay="100">
                     <div class="testimonial-wrapper">
-                        <p class="quote">"La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!"</p>
+                        <p class="quote" data-i18n="testimonial_quote">"La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!"</p>
                         <div class="author-box">
                             <div class="author-avatar">
                                 <i class="fas fa-user"></i>
                             </div>
                             <div class="author-info">
-                                <p class="author">Sophie Martín</p>
-                                <p class="author-title">Gerente del Instituto "Éclat Parfait"</p>
+                                <p class="author" data-i18n="testimonial_author">Sophie Martín</p>
+                                <p class="author-title" data-i18n="testimonial_position">Gerente del Instituto Eclat Parfait</p>
                             </div>
                         </div>
                     </div>
@@ -1413,46 +1471,46 @@
 
         <section id="faq" class="alternate-bg">
             <div class="container">
-                <h2 class="fade-in-up">Preguntas <span class="highlight-blue">Frecuentes</span></h2>
+                <h2 class="fade-in-up" data-i18n="faq_title">Preguntas <span class="highlight-blue">Frecuentes</span></h2>
                 
                 <div class="faq-container">
                     <div class="faq-item fade-in-up">
                         <div class="faq-question">
                             <i class="fas fa-question-circle"></i>
-                            ¿Cómo se integra Blue AI con mi negocio actual?
+                            <span data-i18n="faq1_question">¿Cómo se integra Blue AI con mi negocio actual?</span>
                         </div>
                         <div class="faq-answer">
-                            <p>Blue AI se integra de manera sencilla con tu cuenta comercial de WhatsApp existente. Nuestro equipo te guía durante todo el proceso de configuración, que generalmente toma menos de un día. No necesitas cambiar tus sistemas actuales, ya que Blue AI se adapta a ellos.</p>
+                            <p data-i18n="faq1_answer">Blue AI se integra de manera sencilla con tu cuenta comercial de WhatsApp existente. Nuestro equipo te guía durante todo el proceso de configuración, que generalmente toma menos de un día. No necesitas cambiar tus sistemas actuales, ya que Blue AI se adapta a ellos.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item fade-in-up" data-delay="100">
                         <div class="faq-question">
                             <i class="fas fa-question-circle"></i>
-                            ¿Qué pasa si ya tengo una recepcionista?
+                            <span data-i18n="faq2_question">¿Qué pasa si ya tengo una recepcionista?</span>
                         </div>
                         <div class="faq-answer">
-                            <p>Blue AI complementa perfectamente el trabajo de tu recepcionista, liberándola de tareas repetitivas para que pueda enfocarse en ofrecer un servicio más personalizado a los clientes presenciales. Además, Blue AI trabaja 24/7, respondiendo consultas incluso cuando tu negocio está cerrado.</p>
+                            <p data-i18n="faq2_answer">Blue AI complementa perfectamente el trabajo de tu recepcionista, liberándola de tareas repetitivas para que pueda enfocarse en ofrecer un servicio más personalizado a los clientes presenciales. Además, Blue AI trabaja 24/7, respondiendo consultas incluso cuando tu negocio está cerrado.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item fade-in-up" data-delay="200">
                         <div class="faq-question">
                             <i class="fas fa-question-circle"></i>
-                            ¿Cuánto tiempo se tarda en ver resultados?
+                            <span data-i18n="faq3_question">¿Cuánto tiempo se tarda en ver resultados?</span>
                         </div>
                         <div class="faq-answer">
-                            <p>La mayoría de nuestros clientes empiezan a ver resultados inmediatos en términos de tiempo ahorrado. En cuanto a reducción de no-shows y aumento de nuevas reservas, generalmente se observan mejoras significativas dentro del primer mes de uso.</p>
+                            <p data-i18n="faq3_answer">La mayoría de nuestros clientes empiezan a ver resultados inmediatos en términos de tiempo ahorrado. En cuanto a reducción de no-shows y aumento de nuevas reservas, generalmente se observan mejoras significativas dentro del primer mes de uso.</p>
                         </div>
                     </div>
                     
                     <div class="faq-item fade-in-up" data-delay="300">
                         <div class="faq-question">
                             <i class="fas fa-question-circle"></i>
-                            ¿Hay un contrato a largo plazo?
+                            <span data-i18n="faq4_question">¿Hay un contrato a largo plazo?</span>
                         </div>
                         <div class="faq-answer">
-                            <p>No exigimos contratos a largo plazo. Nuestro servicio funciona con una suscripción mensual de 200€, y puedes cancelar en cualquier momento. Sin embargo, la mayoría de nuestros clientes continúan con nosotros después de ver los resultados positivos.</p>
+                            <p data-i18n="faq4_answer">No exigimos contratos a largo plazo. Nuestro servicio funciona con una suscripción mensual de 200€, y puedes cancelar en cualquier momento. Sin embargo, la mayoría de nuestros clientes continúan con nosotros después de ver los resultados positivos.</p>
                         </div>
                     </div>
                 </div>
@@ -1461,37 +1519,37 @@
 
         <section id="por-que-blue-ai">
             <div class="container">
-                <h2 class="fade-in-up">¿Por Qué Elegir <span class="highlight-blue">"Blue AI"</span> para Tu Salón?</h2>
+                <h2 class="fade-in-up" data-i18n="why_choose_title">¿Por Qué Elegir <span class="highlight-blue">Blue AI</span> para Tu Salón?</h2>
                 <div class="features-list">
                     <div class="feature-block fade-in-up">
                         <span class="icon"><i class="fas fa-euro-sign"></i></span>
-                        <h3>Aumenta Rentabilidad</h3>
-                        <p>Reduce costos operativos y maximiza tus ingresos con automatización inteligente y captura de clientes 24/7.</p>
+                        <h3 data-i18n="feature1_title">Aumenta Rentabilidad</h3>
+                        <p data-i18n="feature1_text">Reduce costos operativos y maximiza tus ingresos con automatización inteligente y captura de clientes 24/7.</p>
                     </div>
                     <div class="feature-block fade-in-up" data-delay="100">
                         <span class="icon"><i class="fas fa-clock"></i></span>
-                        <h3>Gana Tiempo Valioso</h3>
-                        <p>Automatiza tareas repetitivas y enfócate en lo que realmente importa: dar un servicio excepcional a tus clientes.</p>
+                        <h3 data-i18n="feature2_title">Gana Tiempo Valioso</h3>
+                        <p data-i18n="feature2_text">Automatiza tareas repetitivas y enfócate en lo que realmente importa: dar un servicio excepcional a tus clientes.</p>
                     </div>
                     <div class="feature-block fade-in-up" data-delay="200">
                         <span class="icon"><i class="fas fa-smile-beam"></i></span>
-                        <h3>Mejora Experiencia Cliente</h3>
-                        <p>Ofrece disponibilidad 24/7 y comunicaciones fluidas y profesionales que impresionan a tus clientes.</p>
+                        <h3 data-i18n="feature3_title">Mejora Experiencia Cliente</h3>
+                        <p data-i18n="feature3_text">Ofrece disponibilidad 24/7 y comunicaciones fluidas y profesionales que impresionan a tus clientes.</p>
                     </div>
                     <div class="feature-block fade-in-up" data-delay="300">
                         <span class="icon"><i class="fas fa-spa"></i></span>
-                        <h3>Reduce el Estrés</h3>
-                        <p>Disminuye interrupciones y organiza tu negocio de forma óptima para un ambiente de trabajo más tranquilo.</p>
+                        <h3 data-i18n="feature4_title">Reduce el Estrés</h3>
+                        <p data-i18n="feature4_text">Disminuye interrupciones y organiza tu negocio de forma óptima para un ambiente de trabajo más tranquilo.</p>
                     </div>
                     <div class="feature-block fade-in-up" data-delay="400">
                         <span class="icon"><i class="fas fa-chart-line"></i></span>
-                        <h3>Crecimiento Sostenible</h3>
-                        <p>Expande tu negocio sin aumentar proporcionalmente los costos administrativos y de gestión.</p>
+                        <h3 data-i18n="feature5_title">Crecimiento Sostenible</h3>
+                        <p data-i18n="feature5_text">Expande tu negocio sin aumentar proporcionalmente los costos administrativos y de gestión.</p>
                     </div>
                     <div class="feature-block fade-in-up" data-delay="500">
                         <span class="icon"><i class="fas fa-shield-alt"></i></span>
-                        <h3>Sin Riesgos</h3>
-                        <p>Comienza sin inversión inicial y cancela en cualquier momento. El retorno de inversión está garantizado.</p>
+                        <h3 data-i18n="feature6_title">Sin Riesgos</h3>
+                        <p data-i18n="feature6_text">Comienza sin inversión inicial y cancela en cualquier momento. El retorno de inversión está garantizado.</p>
                     </div>
                 </div>
             </div>
@@ -1499,21 +1557,21 @@
 
         <section class="final-cta-section">
             <div class="container">
-                <h2 class="fade-in-up">¿Listo para Transformar Tu Salón con Blue AI?</h2>
-                <p class="fade-in-up" data-delay="100">Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.</p>
-                <a href="https://calendly.com/amaury-vergier/30min" class="cta-button fade-in-up" data-delay="200" target="_blank">
-                    <i class="fas fa-calendar-check"></i> Solicitar una Demo Gratuita Ahora
+                <h2 class="fade-in-up" data-i18n="final_cta_title">¿Listo para Transformar Tu Salón con Blue AI?</h2>
+                <p class="fade-in-up" data-delay="100" data-i18n="final_cta_text">Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.</p>
+                <a href="https://calendly.com/amaury-vergier/30min" class="cta-button fade-in-up" data-delay="200" target="_blank" data-i18n="final_cta_button">
+                    <i class="fas fa-calendar-check"></i> <span>Solicitar una Demo Gratuita Ahora</span>
                 </a>
                 
                 <div class="trust-badges fade-in-up" data-delay="300">
                     <div class="badge-item">
-                        <i class="fas fa-check-circle"></i> Sin compromiso
+                        <i class="fas fa-check-circle"></i> <span data-i18n="badge1">Sin compromiso</span>
                     </div>
                     <div class="badge-item">
-                        <i class="fas fa-rocket"></i> Implementación rápida
+                        <i class="fas fa-rocket"></i> <span data-i18n="badge2">Implementación rápida</span>
                     </div>
                     <div class="badge-item">
-                        <i class="fas fa-headset"></i> Soporte personalizado
+                        <i class="fas fa-headset"></i> <span data-i18n="badge3">Soporte personalizado</span>
                     </div>
                 </div>
             </div>
@@ -1529,29 +1587,516 @@
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
             </div>
             <div class="footer-nav">
-                <a href="#">Inicio</a>
-                <a href="#">Servicios</a>
-                <a href="#">Casos de Éxito</a>
-                <a href="#">Contacto</a>
+                <a href="#" data-i18n="nav_home">Inicio</a>
+                <a href="#" data-i18n="nav_services">Servicios</a>
+                <a href="#" data-i18n="nav_case_studies">Casos de Éxito</a>
+                <a href="#" data-i18n="nav_contact">Contacto</a>
             </div>
-            <p>&copy; 2025 BlueBerry Horizon LLC - Todos los derechos reservados.</p>
-            <p>Blue AI - La solución inteligente para profesionales de la belleza.</p>
+            <p data-i18n="footer_copyright">&copy; 2025 BlueBerry Horizon LLC - Todos los derechos reservados.</p>
+            <p data-i18n="footer_tagline">Blue AI - La solución inteligente para profesionales de la belleza.</p>
         </div>
     </footer>
     
     <div class="newsletter-popup" id="newsletterPopup">
         <button class="popup-close" id="popupClose"><i class="fas fa-times"></i></button>
-        <h4 class="popup-title">¿Quieres más consejos para tu negocio?</h4>
-        <p class="popup-text">Suscríbete para recibir casos de éxito, consejos y ofertas especiales.</p>
+        <h4 class="popup-title" data-i18n="newsletter_title">¿Quieres más consejos para tu negocio?</h4>
+        <p class="popup-text" data-i18n="newsletter_text">Suscríbete para recibir casos de éxito, consejos y ofertas especiales.</p>
         <form class="newsletter-form">
-            <input type="email" class="newsletter-input" placeholder="Tu email">
+            <input type="email" class="newsletter-input" data-i18n-placeholder="newsletter_email_placeholder" placeholder="Tu email">
             <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
         </form>
     </div>
     
     <script>
-        // Animations au défilement
+        // Initialiser les traductions avant le chargement complet du DOM
+        const translations = {
+            es: {
+                page_title: "Caso de Éxito: Blue AI & Instituto Eclat Parfait",
+                new_case_study: "Nuevo caso de éxito",
+                hero_title: "Cómo el Instituto Eclat Parfait Revolucionó su Gestión y Aumentó Ingresos",
+                hero_subtitle: "Descubre cómo nuestra solución de IA para WhatsApp Blue AI por solo 200€/mes transformó desafíos en oportunidades de crecimiento.",
+                hero_cta: "Solicitar Demo Gratuita",
+                
+                challenge_title: "El <span class='highlight-blue'>Desafío</span>: Una Carga Operativa Costosa",
+                challenge_card1_title: "Sobrecarga de Trabajo",
+                challenge_card1_text: "15-20 llamadas y mensajes diarios interrumpían constantemente los tratamientos y la concentración del personal.",
+                challenge_card2_title: "Pérdidas por No-Shows",
+                challenge_card2_text: "Un promedio de <strong>8 citas perdidas al mes</strong>, resultando en una pérdida directa de <strong>480€</strong>.",
+                challenge_card3_title: "Oportunidades Desaprovechadas",
+                challenge_card3_text: "Entre 3 y 5 clientes potenciales no captados mensualmente por falta de respuesta inmediata fuera de horario.",
+                challenge_card4_title: "Tiempo Malgastado",
+                challenge_card4_text: "Aproximadamente <strong>40 horas mensuales</strong> dedicadas a tareas administrativas repetitivas y de bajo valor.",
+                
+                solution_title: "La <span class='highlight-blue'>Solución</span>: Blue AI - Tu Asistente Inteligente",
+                solution_card1_title: "Automatización 24/7",
+                solution_card1_text: "Respuestas instantáneas a preguntas frecuentes (tarifas, horarios, servicios) vía WhatsApp, disponibles a toda hora.",
+                solution_card2_title: "Gestión de Citas Eficaz",
+                solution_card2_text: "Programación inteligente de citas, sincronizada con la agenda del salón, y envío de confirmaciones automáticas.",
+                solution_card3_title: "Recordatorios Inteligentes",
+                solution_card3_text: "Reducción drástica de No-Shows gracias a recordatorios personalizados enviados 48h y 24h antes de la cita.",
+                solution_card4_title: "Marketing Dirigido",
+                solution_card4_text: "Capacidad para difundir promociones y novedades de forma segmentada a la base de clientes existente.",
+                solution_price: "Todo esto por <strong style='background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'>solo 200€ al mes</strong>, con una integración simple y rápida.",
+                
+                calculator_title: "Calcula tu ROI con Blue AI",
+                calculator_hours: "Horas mensuales en tareas administrativas",
+                calculator_hours_placeholder: "Ej: 40",
+                calculator_rate: "Valor de tu hora (€)",
+                calculator_rate_placeholder: "Ej: 15",
+                calculator_missed: "Citas perdidas al mes",
+                calculator_missed_placeholder: "Ej: 8",
+                calculator_value: "Valor promedio de cita (€)",
+                calculator_value_placeholder: "Ej: 60",
+                calculator_button: "Calcular mi ROI",
+                calculator_result_heading: "Tu ROI mensual con Blue AI:",
+                calculator_result_summary: "Ahorras 1000€ al mes con una inversión de solo 200€",
+                
+                results_title: "Resultados <span class='highlight-blue'>Impactantes</span> en Solo 3 Meses",
+                results_box1: "Ahorrados/mes (30h de tiempo recuperado)",
+                results_box2: "Recuperados/mes (reducción de no-shows)",
+                results_box3: "Generados/mes (nuevas reservas captadas)",
+                
+                financial_title: "Balance Financiero Impresionante",
+                financial_line1: "Ingresos Adicionales/Ahorrados:",
+                financial_line2: "Costo de Blue AI:",
+                financial_line3: "Beneficio Neto Mensual:",
+                financial_roi: "Retorno de la Inversión (ROI): 500%!",
+                
+                testimonial_title: "Lo que Dicen <span class='highlight-blue'>Nuestros Clientes</span>",
+                testimonial_quote: "La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!",
+                testimonial_author: "Sophie Martín",
+                testimonial_position: "Gerente del Instituto Eclat Parfait",
+                
+                faq_title: "Preguntas <span class='highlight-blue'>Frecuentes</span>",
+                faq1_question: "¿Cómo se integra Blue AI con mi negocio actual?",
+                faq1_answer: "Blue AI se integra de manera sencilla con tu cuenta comercial de WhatsApp existente. Nuestro equipo te guía durante todo el proceso de configuración, que generalmente toma menos de un día. No necesitas cambiar tus sistemas actuales, ya que Blue AI se adapta a ellos.",
+                faq2_question: "¿Qué pasa si ya tengo una recepcionista?",
+                faq2_answer: "Blue AI complementa perfectamente el trabajo de tu recepcionista, liberándola de tareas repetitivas para que pueda enfocarse en ofrecer un servicio más personalizado a los clientes presenciales. Además, Blue AI trabaja 24/7, respondiendo consultas incluso cuando tu negocio está cerrado.",
+                faq3_question: "¿Cuánto tiempo se tarda en ver resultados?",
+                faq3_answer: "La mayoría de nuestros clientes empiezan a ver resultados inmediatos en términos de tiempo ahorrado. En cuanto a reducción de no-shows y aumento de nuevas reservas, generalmente se observan mejoras significativas dentro del primer mes de uso.",
+                faq4_question: "¿Hay un contrato a largo plazo?",
+                faq4_answer: "No exigimos contratos a largo plazo. Nuestro servicio funciona con una suscripción mensual de 200€, y puedes cancelar en cualquier momento. Sin embargo, la mayoría de nuestros clientes continúan con nosotros después de ver los resultados positivos.",
+                
+                why_choose_title: "¿Por Qué Elegir <span class='highlight-blue'>Blue AI</span> para Tu Salón?",
+                feature1_title: "Aumenta Rentabilidad",
+                feature1_text: "Reduce costos operativos y maximiza tus ingresos con automatización inteligente y captura de clientes 24/7.",
+                feature2_title: "Gana Tiempo Valioso",
+                feature2_text: "Automatiza tareas repetitivas y enfócate en lo que realmente importa: dar un servicio excepcional a tus clientes.",
+                feature3_title: "Mejora Experiencia Cliente",
+                feature3_text: "Ofrece disponibilidad 24/7 y comunicaciones fluidas y profesionales que impresionan a tus clientes.",
+                feature4_title: "Reduce el Estrés",
+                feature4_text: "Disminuye interrupciones y organiza tu negocio de forma óptima para un ambiente de trabajo más tranquilo.",
+                feature5_title: "Crecimiento Sostenible",
+                feature5_text: "Expande tu negocio sin aumentar proporcionalmente los costos administrativos y de gestión.",
+                feature6_title: "Sin Riesgos",
+                feature6_text: "Comienza sin inversión inicial y cancela en cualquier momento. El retorno de inversión está garantizado.",
+                
+                final_cta_title: "¿Listo para Transformar Tu Salón con Blue AI?",
+                final_cta_text: "Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.",
+                final_cta_button: "Solicitar una Demo Gratuita Ahora",
+                
+                badge1: "Sin compromiso",
+                badge2: "Implementación rápida",
+                badge3: "Soporte personalizado",
+                
+                nav_home: "Inicio",
+                nav_services: "Servicios",
+                nav_case_studies: "Casos de Éxito",
+                nav_contact: "Contacto",
+                
+                footer_copyright: "&copy; 2025 BlueBerry Horizon LLC - Todos los derechos reservados.",
+                footer_tagline: "Blue AI - La solución inteligente para profesionales de la belleza.",
+                
+                newsletter_title: "¿Quieres más consejos para tu negocio?",
+                newsletter_text: "Suscríbete para recibir casos de éxito, consejos y ofertas especiales.",
+                newsletter_email_placeholder: "Tu email"
+            },
+            fr: {
+                page_title: "Cas de Réussite : Blue AI & Institut Eclat Parfait",
+                new_case_study: "Nouveau cas de réussite",
+                hero_title: "Comment l'Institut Eclat Parfait a Révolutionné sa Gestion et Augmenté ses Revenus",
+                hero_subtitle: "Découvrez comment notre solution IA pour WhatsApp Blue AI à seulement 200€/mois a transformé des défis en opportunités de croissance.",
+                hero_cta: "Demander une Démo Gratuite",
+                
+                challenge_title: "Le <span class='highlight-blue'>Défi</span> : Une Charge Opérationnelle Coûteuse",
+                challenge_card1_title: "Surcharge de Travail",
+                challenge_card1_text: "15-20 appels et messages quotidiens interrompaient constamment les soins et la concentration du personnel.",
+                challenge_card2_title: "Pertes dues aux Absences",
+                challenge_card2_text: "Une moyenne de <strong>8 rendez-vous manqués par mois</strong>, entraînant une perte directe de <strong>480€</strong>.",
+                challenge_card3_title: "Opportunités Manquées",
+                challenge_card3_text: "Entre 3 et 5 clients potentiels non captés mensuellement par manque de réponse immédiate en dehors des heures d'ouverture.",
+                challenge_card4_title: "Temps Perdu",
+                challenge_card4_text: "Environ <strong>40 heures mensuelles</strong> consacrées à des tâches administratives répétitives et à faible valeur ajoutée.",
+                
+                solution_title: "La <span class='highlight-blue'>Solution</span> : Blue AI - Votre Assistant Intelligent",
+                solution_card1_title: "Automatisation 24/7",
+                solution_card1_text: "Réponses instantanées aux questions fréquentes (tarifs, horaires, services) via WhatsApp, disponibles à toute heure.",
+                solution_card2_title: "Gestion Efficace des Rendez-vous",
+                solution_card2_text: "Programmation intelligente des rendez-vous, synchronisée avec l'agenda du salon, et envoi de confirmations automatiques.",
+                solution_card3_title: "Rappels Intelligents",
+                solution_card3_text: "Réduction drastique des absences grâce à des rappels personnalisés envoyés 48h et 24h avant le rendez-vous.",
+                solution_card4_title: "Marketing Ciblé",
+                solution_card4_text: "Capacité à diffuser des promotions et nouveautés de manière segmentée à la base de clients existante.",
+                solution_price: "Tout cela pour <strong style='background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'>seulement 200€ par mois</strong>, avec une intégration simple et rapide.",
+                
+                calculator_title: "Calculez votre ROI avec Blue AI",
+                calculator_hours: "Heures mensuelles en tâches administratives",
+                calculator_hours_placeholder: "Ex : 40",
+                calculator_rate: "Valeur de votre heure (€)",
+                calculator_rate_placeholder: "Ex : 15",
+                calculator_missed: "Rendez-vous manqués par mois",
+                calculator_missed_placeholder: "Ex : 8",
+                calculator_value: "Valeur moyenne d'un rendez-vous (€)",
+                calculator_value_placeholder: "Ex : 60",
+                calculator_button: "Calculer mon ROI",
+                calculator_result_heading: "Votre ROI mensuel avec Blue AI :",
+                calculator_result_summary: "Vous économisez 1000€ par mois avec un investissement de seulement 200€",
+                
+                results_title: "Résultats <span class='highlight-blue'>Impressionnants</span> en Seulement 3 Mois",
+                results_box1: "Économisés/mois (30h de temps récupéré)",
+                results_box2: "Récupérés/mois (réduction des absences)",
+                results_box3: "Générés/mois (nouvelles réservations captées)",
+                
+                financial_title: "Bilan Financier Impressionnant",
+                financial_line1: "Revenus Additionnels/Économisés :",
+                financial_line2: "Coût de Blue AI :",
+                financial_line3: "Bénéfice Net Mensuel :",
+                financial_roi: "Retour sur Investissement (ROI) : 500% !",
+                
+                testimonial_title: "Ce que Disent <span class='highlight-blue'>Nos Clients</span>",
+                testimonial_quote: "L'intégration de Blue AI a été une véritable révolution pour nous. Pour 200€ par mois, nous avons non seulement récupéré un temps précieux, mais aussi réduit les absences et gagné de nouveaux clients. Le retour dépasse largement nos attentes !",
+                testimonial_author: "Sophie Martin",
+                testimonial_position: "Gérante de l'Institut Eclat Parfait",
+                
+                faq_title: "Questions <span class='highlight-blue'>Fréquentes</span>",
+                faq1_question: "Comment Blue AI s'intègre-t-il à mon entreprise actuelle ?",
+                faq1_answer: "Blue AI s'intègre facilement à votre compte WhatsApp Business existant. Notre équipe vous guide tout au long du processus de configuration, qui prend généralement moins d'une journée. Vous n'avez pas besoin de changer vos systèmes actuels, car Blue AI s'adapte à eux.",
+                faq2_question: "Que se passe-t-il si j'ai déjà une réceptionniste ?",
+                faq2_answer: "Blue AI complète parfaitement le travail de votre réceptionniste, la libérant des tâches répétitives pour qu'elle puisse se concentrer sur un service plus personnalisé aux clients présents. De plus, Blue AI travaille 24/7, répondant aux demandes même lorsque votre entreprise est fermée.",
+                faq3_question: "Combien de temps faut-il pour voir des résultats ?",
+                faq3_answer: "La plupart de nos clients commencent à voir des résultats immédiats en termes de temps économisé. Quant à la réduction des absences et à l'augmentation des nouvelles réservations, des améliorations significatives sont généralement observées dès le premier mois d'utilisation.",
+                faq4_question: "Y a-t-il un contrat à long terme ?",
+                faq4_answer: "Nous n'exigeons pas de contrats à long terme. Notre service fonctionne avec un abonnement mensuel de 200€, et vous pouvez annuler à tout moment. Cependant, la majorité de nos clients restent avec nous après avoir constaté les résultats positifs.",
+                
+                why_choose_title: "Pourquoi Choisir <span class='highlight-blue'>Blue AI</span> pour Votre Institut ?",
+                feature1_title: "Augmente la Rentabilité",
+                feature1_text: "Réduisez les coûts opérationnels et maximisez vos revenus grâce à l'automatisation intelligente et à la capture de clients 24/7.",
+                feature2_title: "Gagnez un Temps Précieux",
+                feature2_text: "Automatisez les tâches répétitives et concentrez-vous sur ce qui compte vraiment : offrir un service exceptionnel à vos clients.",
+                feature3_title: "Améliorez l'Expérience Client",
+                feature3_text: "Offrez une disponibilité 24/7 et des communications fluides et professionnelles qui impressionnent vos clients.",
+                feature4_title: "Réduisez le Stress",
+                feature4_text: "Diminuez les interruptions et organisez votre entreprise de manière optimale pour un environnement de travail plus serein.",
+                feature5_title: "Croissance Durable",
+                feature5_text: "Développez votre entreprise sans augmenter proportionnellement les coûts administratifs et de gestion.",
+                feature6_title: "Sans Risques",
+                feature6_text: "Commencez sans investissement initial et annulez à tout moment. Le retour sur investissement est garanti.",
+                
+                final_cta_title: "Prêt à Transformer Votre Institut avec Blue AI ?",
+                final_cta_text: "Découvrez le potentiel de l'intelligence artificielle pour faire croître votre entreprise de beauté de manière simple et rentable.",
+                final_cta_button: "Demander une Démo Gratuite Maintenant",
+                
+                badge1: "Sans engagement",
+                badge2: "Mise en place rapide",
+                badge3: "Support personnalisé",
+                
+                nav_home: "Accueil",
+                nav_services: "Services",
+                nav_case_studies: "Cas de Réussite",
+                nav_contact: "Contact",
+                
+                footer_copyright: "&copy; 2025 BlueBerry Horizon LLC - Tous droits réservés.",
+                footer_tagline: "Blue AI - La solution intelligente pour les professionnels de la beauté.",
+                
+                newsletter_title: "Vous voulez plus de conseils pour votre entreprise ?",
+                newsletter_text: "Inscrivez-vous pour recevoir des cas de réussite, des conseils et des offres spéciales.",
+                newsletter_email_placeholder: "Votre email"
+            },
+            en: {
+                page_title: "Success Case: Blue AI & Eclat Parfait Institute",
+                new_case_study: "New case study",
+                hero_title: "How Eclat Parfait Institute Revolutionized its Management and Increased Revenue",
+                hero_subtitle: "Discover how our WhatsApp AI solution Blue AI for just €200/month transformed challenges into growth opportunities.",
+                hero_cta: "Request Free Demo",
+                
+                challenge_title: "The <span class='highlight-blue'>Challenge</span>: A Costly Operational Burden",
+                challenge_card1_title: "Work Overload",
+                challenge_card1_text: "15-20 daily calls and messages constantly interrupted treatments and staff concentration.",
+                challenge_card2_title: "No-Show Losses",
+                challenge_card2_text: "An average of <strong>8 missed appointments per month</strong>, resulting in a direct loss of <strong>€480</strong>.",
+                challenge_card3_title: "Missed Opportunities",
+                challenge_card3_text: "Between 3 and 5 potential clients not captured monthly due to lack of immediate response outside business hours.",
+                challenge_card4_title: "Wasted Time",
+                challenge_card4_text: "Approximately <strong>40 monthly hours</strong> dedicated to repetitive, low-value administrative tasks.",
+                
+                solution_title: "The <span class='highlight-blue'>Solution</span>: Blue AI - Your Intelligent Assistant",
+                solution_card1_title: "24/7 Automation",
+                solution_card1_text: "Instant answers to frequent questions (rates, schedules, services) via WhatsApp, available at all times.",
+                solution_card2_title: "Effective Appointment Management",
+                solution_card2_text: "Intelligent appointment scheduling, synchronized with the salon's calendar, and automatic confirmation sending.",
+                solution_card3_title: "Smart Reminders",
+                solution_card3_text: "Drastic reduction in no-shows thanks to personalized reminders sent 48h and 24h before the appointment.",
+                solution_card4_title: "Targeted Marketing",
+                solution_card4_text: "Ability to distribute promotions and news in a segmented way to the existing customer base.",
+                solution_price: "All this for <strong style='background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'>just €200 per month</strong>, with simple and quick integration.",
+                
+                calculator_title: "Calculate your ROI with Blue AI",
+                calculator_hours: "Monthly hours on administrative tasks",
+                calculator_hours_placeholder: "Ex: 40",
+                calculator_rate: "Value of your hour (€)",
+                calculator_rate_placeholder: "Ex: 15",
+                calculator_missed: "Missed appointments per month",
+                calculator_missed_placeholder: "Ex: 8",
+                calculator_value: "Average appointment value (€)",
+                calculator_value_placeholder: "Ex: 60",
+                calculator_button: "Calculate my ROI",
+                calculator_result_heading: "Your monthly ROI with Blue AI:",
+                calculator_result_summary: "You save €1000 per month with an investment of only €200",
+                
+                results_title: "Impressive <span class='highlight-blue'>Results</span> in Just 3 Months",
+                results_box1: "Saved/month (30h of recovered time)",
+                results_box2: "Recovered/month (reduction in no-shows)",
+                results_box3: "Generated/month (new bookings captured)",
+                
+                financial_title: "Impressive Financial Balance",
+                financial_line1: "Additional/Saved Income:",
+                financial_line2: "Blue AI Cost:",
+                financial_line3: "Net Monthly Benefit:",
+                financial_roi: "Return on Investment (ROI): 500%!",
+                
+                testimonial_title: "What <span class='highlight-blue'>Our Clients</span> Say",
+                testimonial_quote: "Integrating Blue AI has been a true revolution for us. For €200 per month, we not only recovered valuable time, but also reduced no-shows and gained new clients. The return far exceeds our expectations!",
+                testimonial_author: "Sophie Martin",
+                testimonial_position: "Manager of Eclat Parfait Institute",
+                
+                faq_title: "Frequently Asked <span class='highlight-blue'>Questions</span>",
+                faq1_question: "How does Blue AI integrate with my current business?",
+                faq1_answer: "Blue AI integrates easily with your existing WhatsApp Business account. Our team guides you through the setup process, which typically takes less than a day. You don't need to change your current systems, as Blue AI adapts to them.",
+                faq2_question: "What if I already have a receptionist?",
+                faq2_answer: "Blue AI perfectly complements your receptionist's work, freeing them from repetitive tasks so they can focus on providing more personalized service to in-person clients. Plus, Blue AI works 24/7, answering queries even when your business is closed.",
+                faq3_question: "How long does it take to see results?",
+                faq3_answer: "Most of our clients start seeing immediate results in terms of time saved. As for reducing no-shows and increasing new bookings, significant improvements are generally observed within the first month of use.",
+                faq4_question: "Is there a long-term contract?",
+                faq4_answer: "We don't require long-term contracts. Our service operates on a €200 monthly subscription, and you can cancel at any time. However, most of our clients continue with us after seeing the positive results.",
+                
+                why_choose_title: "Why Choose <span class='highlight-blue'>Blue AI</span> for Your Salon?",
+                feature1_title: "Increase Profitability",
+                feature1_text: "Reduce operational costs and maximize your income with intelligent automation and 24/7 client capture.",
+                feature2_title: "Gain Valuable Time",
+                feature2_text: "Automate repetitive tasks and focus on what really matters: providing exceptional service to your clients.",
+                feature3_title: "Improve Client Experience",
+                feature3_text: "Offer 24/7 availability and smooth, professional communications that impress your clients.",
+                feature4_title: "Reduce Stress",
+                feature4_text: "Decrease interruptions and organize your business optimally for a calmer work environment.",
+                feature5_title: "Sustainable Growth",
+                feature5_text: "Expand your business without proportionally increasing administrative and management costs.",
+                feature6_title: "No Risks",
+                feature6_text: "Start without initial investment and cancel at any time. Return on investment is guaranteed.",
+                
+                final_cta_title: "Ready to Transform Your Salon with Blue AI?",
+                final_cta_text: "Discover the potential of artificial intelligence to grow your beauty business simply and profitably.",
+                final_cta_button: "Request a Free Demo Now",
+                
+                badge1: "No commitment",
+                badge2: "Quick implementation",
+                badge3: "Personalized support",
+                
+                nav_home: "Home",
+                nav_services: "Services",
+                nav_case_studies: "Success Cases",
+                nav_contact: "Contact",
+                
+                footer_copyright: "&copy; 2025 BlueBerry Horizon LLC - All rights reserved.",
+                footer_tagline: "Blue AI - The intelligent solution for beauty professionals.",
+                
+                newsletter_title: "Want more tips for your business?",
+                newsletter_text: "Subscribe to receive success cases, tips and special offers.",
+                newsletter_email_placeholder: "Your email"
+            },
+            de: {
+                page_title: "Erfolgsfall: Blue AI & Institut Eclat Parfait",
+                new_case_study: "Neue Fallstudie",
+                hero_title: "Wie das Institut Eclat Parfait sein Management revolutionierte und seinen Umsatz steigerte",
+                hero_subtitle: "Entdecken Sie, wie unsere KI-Lösung für WhatsApp Blue AI für nur 200€/Monat Herausforderungen in Wachstumschancen verwandelte.",
+                hero_cta: "Kostenlose Demo anfordern",
+                
+                challenge_title: "Die <span class='highlight-blue'>Herausforderung</span>: Eine kostspielige betriebliche Belastung",
+                challenge_card1_title: "Arbeitsüberlastung",
+                challenge_card1_text: "15-20 tägliche Anrufe und Nachrichten unterbrachen ständig die Behandlungen und die Konzentration der Mitarbeiter.",
+                challenge_card2_title: "Verluste durch Nichterscheinen",
+                challenge_card2_text: "Durchschnittlich <strong>8 verpasste Termine pro Monat</strong>, was zu einem direkten Verlust von <strong>480€</strong> führte.",
+                challenge_card3_title: "Verpasste Chancen",
+                challenge_card3_text: "Zwischen 3 und 5 potenzielle Kunden wurden monatlich nicht erfasst, da außerhalb der Geschäftszeiten keine sofortige Antwort möglich war.",
+                challenge_card4_title: "Verschwendete Zeit",
+                challenge_card4_text: "Etwa <strong>40 Stunden pro Monat</strong> wurden für repetitive, minderwertige Verwaltungsaufgaben aufgewendet.",
+                
+                solution_title: "Die <span class='highlight-blue'>Lösung</span>: Blue AI - Ihr intelligenter Assistent",
+                solution_card1_title: "24/7 Automatisierung",
+                solution_card1_text: "Sofortige Antworten auf häufige Fragen (Tarife, Zeitpläne, Dienstleistungen) über WhatsApp, jederzeit verfügbar.",
+                solution_card2_title: "Effektives Terminmanagement",
+                solution_card2_text: "Intelligente Terminplanung, synchronisiert mit dem Kalender des Salons, und automatischer Versand von Bestätigungen.",
+                solution_card3_title: "Intelligente Erinnerungen",
+                solution_card3_text: "Drastische Reduzierung von Nichterscheinen dank personalisierter Erinnerungen, die 48 und 24 Stunden vor dem Termin verschickt werden.",
+                solution_card4_title: "Gezieltes Marketing",
+                solution_card4_text: "Fähigkeit, Werbeaktionen und Neuigkeiten segmentiert an den bestehenden Kundenstamm zu verteilen.",
+                solution_price: "All das für <strong style='background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;'>nur 200€ pro Monat</strong>, mit einfacher und schneller Integration.",
+                
+                calculator_title: "Berechnen Sie Ihren ROI mit Blue AI",
+                calculator_hours: "Monatliche Stunden für administrative Aufgaben",
+                calculator_hours_placeholder: "Bsp: 40",
+                calculator_rate: "Wert Ihrer Stunde (€)",
+                calculator_rate_placeholder: "Bsp: 15",
+                calculator_missed: "Verpasste Termine pro Monat",
+                calculator_missed_placeholder: "Bsp: 8",
+                calculator_value: "Durchschnittlicher Terminwert (€)",
+                calculator_value_placeholder: "Bsp: 60",
+                calculator_button: "Meinen ROI berechnen",
+                calculator_result_heading: "Ihr monatlicher ROI mit Blue AI:",
+                calculator_result_summary: "Sie sparen 1000€ pro Monat bei einer Investition von nur 200€",
+                
+                results_title: "Beeindruckende <span class='highlight-blue'>Ergebnisse</span> in nur 3 Monaten",
+                results_box1: "Gespart/Monat (30h zurückgewonnene Zeit)",
+                results_box2: "Wiedergewonnen/Monat (Reduktion von Nichterscheinen)",
+                results_box3: "Generiert/Monat (neue erfasste Buchungen)",
+                
+                financial_title: "Beeindruckende Finanzbilanz",
+                financial_line1: "Zusätzliche/Gesparte Einnahmen:",
+                financial_line2: "Kosten für Blue AI:",
+                financial_line3: "Monatlicher Nettogewinn:",
+                financial_roi: "Return on Investment (ROI): 500%!",
+                
+                testimonial_title: "Was <span class='highlight-blue'>unsere Kunden</span> sagen",
+                testimonial_quote: "Die Integration von Blue AI war eine wahre Revolution für uns. Für 200€ pro Monat haben wir nicht nur wertvolle Zeit zurückgewonnen, sondern auch Nichterscheinen reduziert und neue Kunden gewonnen. Die Rendite übertrifft bei weitem unsere Erwartungen!",
+                testimonial_author: "Sophie Martin",
+                testimonial_position: "Leiterin des Instituts Eclat Parfait",
+                
+                faq_title: "Häufig gestellte <span class='highlight-blue'>Fragen</span>",
+                faq1_question: "Wie integriert sich Blue AI in mein aktuelles Geschäft?",
+                faq1_answer: "Blue AI lässt sich einfach in Ihr bestehendes WhatsApp Business-Konto integrieren. Unser Team führt Sie durch den Einrichtungsprozess, der in der Regel weniger als einen Tag dauert. Sie müssen Ihre aktuellen Systeme nicht ändern, da sich Blue AI an diese anpasst.",
+                faq2_question: "Was ist, wenn ich bereits eine Rezeptionistin habe?",
+                faq2_answer: "Blue AI ergänzt perfekt die Arbeit Ihrer Rezeptionistin, befreit sie von repetitiven Aufgaben, damit sie sich auf einen persönlicheren Service für die anwesenden Kunden konzentrieren kann. Außerdem arbeitet Blue AI rund um die Uhr und beantwortet Anfragen auch dann, wenn Ihr Unternehmen geschlossen ist.",
+                faq3_question: "Wie lange dauert es, bis man Ergebnisse sieht?",
+                faq3_answer: "Die meisten unserer Kunden beginnen, sofortige Ergebnisse in Bezug auf eingesparte Zeit zu sehen. Was die Reduzierung von Nichterscheinen und die Steigerung neuer Buchungen betrifft, werden in der Regel innerhalb des ersten Monats der Nutzung signifikante Verbesserungen beobachtet.",
+                faq4_question: "Gibt es einen langfristigen Vertrag?",
+                faq4_answer: "Wir verlangen keine langfristigen Verträge. Unser Service funktioniert mit einem monatlichen Abonnement von 200€, und Sie können jederzeit kündigen. Die meisten unserer Kunden bleiben jedoch bei uns, nachdem sie die positiven Ergebnisse gesehen haben.",
+                
+                why_choose_title: "Warum <span class='highlight-blue'>Blue AI</span> für Ihren Salon wählen?",
+                feature1_title: "Rentabilität steigern",
+                feature1_text: "Reduzieren Sie die Betriebskosten und maximieren Sie Ihre Einnahmen mit intelligenter Automatisierung und 24/7-Kundengewinnung.",
+                feature2_title: "Wertvolle Zeit gewinnen",
+                feature2_text: "Automatisieren Sie repetitive Aufgaben und konzentrieren Sie sich auf das, was wirklich zählt: einen außergewöhnlichen Service für Ihre Kunden.",
+                feature3_title: "Kundenerfahrung verbessern",
+                feature3_text: "Bieten Sie 24/7-Verfügbarkeit und reibungslose, professionelle Kommunikation, die Ihre Kunden beeindruckt.",
+                feature4_title: "Stress reduzieren",
+                feature4_text: "Verringern Sie Unterbrechungen und organisieren Sie Ihr Unternehmen optimal für eine ruhigere Arbeitsumgebung.",
+                feature5_title: "Nachhaltiges Wachstum",
+                feature5_text: "Erweitern Sie Ihr Unternehmen, ohne die Verwaltungs- und Managementkosten proportional zu erhöhen.",
+                feature6_title: "Keine Risiken",
+                feature6_text: "Starten Sie ohne Anfangsinvestition und kündigen Sie jederzeit. Return on Investment ist garantiert.",
+                
+                final_cta_title: "Bereit, Ihren Salon mit Blue AI zu transformieren?",
+                final_cta_text: "Entdecken Sie das Potenzial der künstlichen Intelligenz, um Ihr Schönheitsunternehmen einfach und rentabel zu erweitern.",
+                final_cta_button: "Jetzt eine kostenlose Demo anfordern",
+                
+                badge1: "Keine Verpflichtung",
+                badge2: "Schnelle Implementierung",
+                badge3: "Personalisierter Support",
+                
+                nav_home: "Startseite",
+                nav_services: "Dienstleistungen",
+                nav_case_studies: "Erfolgsfälle",
+                nav_contact: "Kontakt",
+                
+                footer_copyright: "&copy; 2025 BlueBerry Horizon LLC - Alle Rechte vorbehalten.",
+                footer_tagline: "Blue AI - Die intelligente Lösung für Schönheitsprofis.",
+                
+                newsletter_title: "Möchten Sie mehr Tipps für Ihr Unternehmen?",
+                newsletter_text: "Abonnieren Sie, um Erfolgsfälle, Tipps und Sonderangebote zu erhalten.",
+                newsletter_email_placeholder: "Ihre E-Mail"
+            }
+        };
+
+        // Fonctions pour le changement de langue - à l'extérieur du DOMContentLoaded
+        function setActiveLanguage(lang) {
+            document.querySelectorAll('.lang-option').forEach(function(option) {
+                if (option.getAttribute('data-lang') === lang) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+        }
+            
+        function applyTranslations(lang) {
+            if (!translations[lang]) return;
+            
+            // Apply translations to all elements with data-i18n attribute
+            document.querySelectorAll('[data-i18n]').forEach(function(element) {
+                const key = element.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                        element.placeholder = translations[lang][key];
+                    } else {
+                        element.innerHTML = translations[lang][key];
+                    }
+                }
+            });
+            
+            // Apply translations to placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(function(element) {
+                const key = element.getAttribute('data-i18n-placeholder');
+                if (translations[lang][key]) {
+                    element.placeholder = translations[lang][key];
+                }
+            });
+            
+            // Update document title
+            if (translations[lang].page_title) {
+                document.title = translations[lang].page_title;
+            }
+            
+            // Update ROI calculator result text if shown
+            updateCalculatorResultText(lang);
+        }
+        
+        function updateCalculatorResultText(lang) {
+            const calculatorResult = document.getElementById('calculatorResult');
+            if (calculatorResult && calculatorResult.classList.contains('show')) {
+                const roiValue = document.getElementById('roiResult').textContent;
+                const monthlySavings = parseFloat(roiValue) * 2; // Simple calc for example
+                
+                // Translate based on language
+                if (lang === 'es') {
+                    document.getElementById('roiSummary').textContent = `Ahorras ${monthlySavings}€ al mes con una inversión de solo 200€`;
+                } else if (lang === 'fr') {
+                    document.getElementById('roiSummary').textContent = `Vous économisez ${monthlySavings}€ par mois avec un investissement de seulement 200€`;
+                } else if (lang === 'en') {
+                    document.getElementById('roiSummary').textContent = `You save ${monthlySavings}€ per month with an investment of only €200`;
+                } else if (lang === 'de') {
+                    document.getElementById('roiSummary').textContent = `Sie sparen ${monthlySavings}€ pro Monat bei einer Investition von nur 200€`;
+                }
+            }
+        }
+            
+        // Initialiser la langue dès le chargement de la page
+        let currentLang = localStorage.getItem('selectedLang') || 'es';
+        document.documentElement.lang = currentLang;
+        setActiveLanguage(currentLang);
+        applyTranslations(currentLang);
+            
+        // Ajouter des écouteurs d'événements aux boutons de langue
         document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.lang-option').forEach(function(option) {
+                option.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const lang = this.getAttribute('data-lang');
+                    localStorage.setItem('selectedLang', lang);
+                    document.documentElement.lang = lang;
+                    setActiveLanguage(lang);
+                    applyTranslations(lang);
+                });
+            });
+            
             // Fonction pour vérifier si un élément est visible dans la fenêtre
             function isInViewport(element) {
                 const rect = element.getBoundingClientRect();
@@ -1623,7 +2168,18 @@
                 
                 // Affichage des résultats
                 document.getElementById('roiResult').textContent = Math.round(roi) + '%';
-                document.getElementById('roiSummary').textContent = `Ahorras ${Math.round(totalMonthly)}€ al mes con una inversión de solo ${costOfBlueAI}€`;
+                
+                // Update summary text based on current language
+                const currentLang = document.documentElement.lang || 'es';
+                if (currentLang === 'es') {
+                    document.getElementById('roiSummary').textContent = `Ahorras ${Math.round(totalMonthly)}€ al mes con una inversión de solo ${costOfBlueAI}€`;
+                } else if (currentLang === 'fr') {
+                    document.getElementById('roiSummary').textContent = `Vous économisez ${Math.round(totalMonthly)}€ par mois avec un investissement de seulement ${costOfBlueAI}€`;
+                } else if (currentLang === 'en') {
+                    document.getElementById('roiSummary').textContent = `You save ${Math.round(totalMonthly)}€ per month with an investment of only €${costOfBlueAI}`;
+                } else if (currentLang === 'de') {
+                    document.getElementById('roiSummary').textContent = `Sie sparen ${Math.round(totalMonthly)}€ pro Monat bei einer Investition von nur ${costOfBlueAI}€`;
+                }
                 
                 calculatorResult.classList.add('show');
                 
