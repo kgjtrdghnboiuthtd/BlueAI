@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso de Éxito: Blue AI & Instituto Éclat Parfait</title>
+    <style>
+        :root {
+            --alan-blue: #0055FF;
+            --alan-blue-light: #E6F0FF;
+            --accent-orange: #f39c12;
+            --accent-orange-hover: #e67e22;
+            --text-dark: #1A202C;
+            --text-medium: #4A5568;
+            --text-light: #718096;
+            --bg-white: #FFFFFF;
+            --bg-soft-gray: #F7FAFC;
+            --border-color: #E2E8F0;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', 'system-ui', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.65;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-white);
+            color: var(--text-medium);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Header / Hero Section */
+        .hero {
+            background-color: var(--bg-white);
+            padding: 80px 20px 60px 20px;
+            text-align: center;
+            position: relative;
+            /* --- MOTIF DE BULLES DE DISCUSSION MIS À JOUR --- */
+            background-image: url("data:image/svg+xml,%3Csvg width='280' height='220' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 20 Q20 20 20 30 L20 45 Q20 55 30 55 L60 55 Q70 55 70 45 L70 30 Q70 20 60 20 L30 20 Z M20 30 L10 30 L20 40 Z' fill='rgba(0,0,0,0.03)'/%3E%3Cpath d='M150 60 Q140 60 140 70 L140 90 Q140 100 150 100 L190 100 Q200 100 200 90 L200 70 Q200 60 190 60 L150 60 Z M200 70 L210 70 L200 80 Z' fill='rgba(0,0,0,0.025)'/%3E%3Cpath d='M50 130 Q40 130 40 140 L40 170 Q40 180 50 180 L100 180 Q110 180 110 170 L110 140 Q110 130 100 130 L50 130 Z M40 140 L30 140 L40 150 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M200 150 Q190 150 190 160 L190 175 Q190 185 200 185 L230 185 Q240 185 240 175 L240 160 Q240 150 230 150 L200 150 Z M240 160 L250 160 L240 170 Z' fill='rgba(0,0,0,0.035)'/%3E%3Cpath d='M100 180 Q90 180 90 190 L90 205 Q90 215 100 215 L130 215 Q140 215 140 205 L140 190 Q140 180 130 180 L100 180 Z M140 190 L150 190 L140 200 Z' fill='rgba(0,0,0,0.028)'/%3E%3C/svg%3E");
+            background-repeat: repeat;
+            background-size: 300px auto; /* Taille de la tuile du motif, ajustez si besoin */
+            background-position: center center;
+            /* --- FIN DU MOTIF --- */
+        }
+
+        .hero .logo-placeholder {
+            font-size: 2.2em;
+            font-weight: 700;
+            color: var(--alan-blue);
+            margin-bottom: 25px;
+            letter-spacing: -0.5px;
+        }
+        .hero h1 {
+            font-size: 2.6em;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+        .hero .subtitle {
+            font-size: 1.15em;
+            color: var(--text-medium);
+            max-width: 650px;
+            margin: 0 auto 35px auto;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-orange);
+            color: #fff;
+            padding: 14px 32px;
+            text-decoration: none;
+            font-size: 1.05em;
+            font-weight: 600;
+            border-radius: var(--border-radius-md);
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+        }
+        .cta-button:hover {
+            background-color: var(--accent-orange-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 70px 20px;
+        }
+        section.alternate-bg {
+            background-color: var(--bg-soft-gray);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            color: var(--text-dark);
+            margin-bottom: 45px;
+            font-weight: 600;
+        }
+        section h2 .highlight-blue {
+            color: var(--alan-blue);
+        }
+
+        /* Cards for Challenge & Solution */
+        .info-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+        }
+        .info-card {
+            background-color: var(--bg-white);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+            flex-basis: 280px;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 599px) {
+            .info-card {
+                max-width: 100%;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 959px) {
+            .info-card {
+                max-width: calc(50% - 12.5px);
+            }
+        }
+        @media (min-width: 960px) {
+             .info-card {
+                max-width: calc(33.333% - 17px);
+             }
+        }
+
+        .info-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
+        }
+        .info-card .emoji-title {
+            font-size: 1.8em;
+            margin-right: 12px;
+            line-height: 1;
+        }
+        .info-card h3 {
+            font-size: 1.25em;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        .info-card p {
+            font-size: 0.95em;
+            color: var(--text-medium);
+            margin-bottom: 0;
+        }
+        .info-card strong {
+            color: var(--alan-blue);
+            font-weight: 600;
+        }
+
+        /* Results Section */
+        .results-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        .result-box {
+            background-color: var(--alan-blue-light);
+            color: var(--alan-blue);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            border: 1px solid var(--alan-blue);
+        }
+        .result-box .value {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 5px;
+            display: block;
+            color: var(--alan-blue);
+        }
+        .result-box .label {
+            font-size: 0.9em;
+            color: var(--text-medium);
+        }
+
+        .roi-summary {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+        }
+        .roi-summary h3 {
+            font-size: 1.6em;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+        .roi-summary ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 400px;
+            text-align: left;
+        }
+        .roi-summary ul li {
+            font-size: 1.05em;
+            margin-bottom: 10px;
+            color: var(--text-medium);
+            display: flex;
+            justify-content: space-between;
+        }
+        .roi-summary ul li .figure {
+            font-weight: 600;
+            color: var(--alan-blue);
+        }
+        .roi-summary .total-roi {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: var(--accent-orange);
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* Testimonial Section */
+        .testimonial-wrapper {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: var(--alan-blue-light);
+            padding: 35px;
+            border-radius: var(--border-radius-lg);
+            position: relative;
+            border: 1px solid var(--alan-blue);
+        }
+        .testimonial-wrapper::before {
+            content: '“';
+            font-family: Georgia, serif;
+            font-size: 5em;
+            color: var(--alan-blue);
+            opacity: 0.2;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        .testimonial-wrapper p.quote {
+            font-size: 1.1em;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 10px;
+            font-style: italic;
+        }
+        .testimonial-wrapper .author {
+            font-weight: 600;
+            text-align: right;
+            color: var(--alan-blue);
+            font-style: normal;
+        }
+
+        /* Why Choose Us Section (Features) */
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .feature-block {
+            text-align: center;
+            flex-basis: 250px;
+            flex-grow: 1;
+        }
+
+        @media (max-width: 599px) {
+            .feature-block {
+                max-width: 100%;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 959px) {
+            .feature-block {
+                max-width: calc(50% - 15px);
+            }
+        }
+        @media (min-width: 960px) {
+             .feature-block {
+                max-width: calc(33.333% - 20px);
+             }
+        }
+
+        .feature-block .icon {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            display: inline-block;
+            line-height: 1;
+        }
+        .feature-block h3 {
+            font-size: 1.2em;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        .feature-block p {
+            font-size: 0.95em;
+            color: var(--text-medium);
+        }
+
+        /* Final CTA Section */
+        .final-cta-section {
+            background-color: var(--alan-blue);
+            color: #fff;
+            text-align: center;
+            padding: 70px 20px;
+        }
+        .final-cta-section h2 {
+            color: #fff;
+            margin-bottom: 15px;
+            font-size: 2em;
+        }
+        .final-cta-section p {
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: var(--bg-soft-gray);
+            color: var(--text-light);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border-color);
+        }
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.1em;
+            }
+            .hero .subtitle {
+                font-size: 1em;
+            }
+            .hero {
+                background-size: 220px auto; /* Ajuster la taille du motif pour mobile */
+            }
+            section h2 {
+                font-size: 1.7em;
+            }
+            .results-showcase {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-wrapper::before {
+                font-size: 4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <div class="container">
+            <div class="logo-placeholder">Blue AI</div>
+            <h1>Cómo el Instituto "Éclat Parfait" Revolucionó su Gestión y Aumentó Ingresos</h1>
+            <p class="subtitle">Descubre cómo nuestra solución de IA para WhatsApp "Blue AI" por solo 200€/mes transformó desafíos en oportunidades de crecimiento.</p>
+            <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">Solicitar Demo Gratuita</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="el-desafio" class="alternate-bg">
+            <div class="container">
+                <h2>El <span class="highlight-blue">Desafío</span>: Una Carga Operativa Costosa</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><span class="emoji-title">🤯</span>Sobrecarga de Trabajo</h3>
+                        <p>15-20 llamadas y mensajes diarios interrumpían constantemente los tratamientos y la concentración del personal.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">💸</span>Pérdidas por "No-Shows"</h3>
+                        <p>Un promedio de <strong>8 citas perdidas al mes</strong>, resultando en una pérdida directa de <strong>480€</strong>.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">📉</span>Oportunidades Desaprovechadas</h3>
+                        <p>Entre 3 y 5 clientes potenciales no captados mensualmente por falta de respuesta inmediata fuera de horario.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">⏳</span>Tiempo Malgastado</h3>
+                        <p>Aproximadamente <strong>40 horas mensuales</strong> dedicadas a tareas administrativas repetitivas y de bajo valor.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="la-solucion">
+            <div class="container">
+                <h2>La <span class="highlight-blue">Solución</span>: "Blue AI" - Tu Asistente Inteligente</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <h3><span class="emoji-title">🤖</span>Automatización 24/7</h3>
+                        <p>Respuestas instantáneas a preguntas frecuentes (tarifas, horarios, servicios) vía WhatsApp, disponibles a toda hora.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">🗓️</span>Gestión de Citas Eficaz</h3>
+                        <p>Programación inteligente de citas, sincronizada con la agenda del salón, y envío de confirmaciones automáticas.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">🔔</span>Recordatorios Inteligentes</h3>
+                        <p>Reducción drástica de "no-shows" gracias a recordatorios personalizados enviados 48h y 24h antes de la cita.</p>
+                    </div>
+                    <div class="info-card">
+                        <h3><span class="emoji-title">🎯</span>Marketing Dirigido</h3>
+                        <p>Capacidad para difundir promociones y novedades de forma segmentada a la base de clientes existente.</p>
+                    </div>
+                </div>
+                 <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--text-medium);">Todo esto por <strong>solo 200€ al mes</strong>, con una integración simple y rápida.</p>
+            </div>
+        </section>
+
+        <section id="los-resultados" class="alternate-bg">
+            <div class="container">
+                <h2>Resultados <span class="highlight-blue">Impactantes</span> en Solo 3 Meses</h2>
+                <div class="results-showcase">
+                    <div class="result-box">
+                        <span class="value">+600€</span>
+                        <span class="label">Ahorrados/mes (30h de tiempo recuperado)</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="value">+360€</span>
+                        <span class="label">Recuperados/mes (reducción de no-shows)</span>
+                    </div>
+                    <div class="result-box">
+                        <span class="value">+240€</span>
+                        <span class="label">Generados/mes (nuevas reservas captadas)</span>
+                    </div>
+                </div>
+                <div class="roi-summary">
+                    <h3>Balance Financiero Impresionante</h3>
+                    <ul>
+                        <li>Ingresos Adicionales/Ahorrados: <span class="figure">1200€/mes</span></li>
+                        <li>Costo de Blue AI: <span class="figure">200€/mes</span></li>
+                        <li>Beneficio Neto Mensual: <span class="figure">1000€/mes</span></li>
+                    </ul>
+                    <span class="total-roi">Retorno de la Inversión (ROI): ¡500%!</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonio">
+            <div class="container">
+                <h2>Lo que Dice la <span class="highlight-blue">Gerente</span></h2>
+                <div class="testimonial-wrapper">
+                    <p class="quote">"La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!"</p>
+                    <p class="author">- Sophie, Gerente del Instituto "Éclat Parfait"</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="por-que-blue-ai" class="alternate-bg">
+            <div class="container">
+                <h2>¿Por Qué Elegir <span class="highlight-blue">"Blue AI"</span> para Tu Salón?</h2>
+                <div class="features-list">
+                    <div class="feature-block">
+                        <span class="icon">💰</span>
+                        <h3>Aumenta Rentabilidad</h3>
+                        <p>Reduce costos operativos y maximiza tus ingresos.</p>
+                    </div>
+                    <div class="feature-block">
+                        <span class="icon">⏱️</span>
+                        <h3>Gana Tiempo Valioso</h3>
+                        <p>Automatiza tareas repetitivas y enfócate en tus clientes.</p>
+                    </div>
+                    <div class="feature-block">
+                        <span class="icon">😊</span>
+                        <h3>Mejora Experiencia Cliente</h3>
+                        <p>Disponibilidad 24/7 y comunicaciones fluidas y profesionales.</p>
+                    </div>
+                    <div class="feature-block">
+                        <span class="icon">🧘</span>
+                        <h3>Reduce el Estrés</h3>
+                        <p>Menos interrupciones y una organización optimizada.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="final-cta-section">
+            <div class="container">
+                <h2>¿Listo para Transformar Tu Salón con Blue AI?</h2>
+                <p>Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.</p>
+                <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">Solicitar una Demo Gratuita Ahora</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 BlueBerry Horizon LLC - Todos los derechos reservados.</p>
+            <p>Blue AI - La solución inteligente para profesionales de la belleza.</p>
+        </div>
+    </footer>
+</body>
+</html>
