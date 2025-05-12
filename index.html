@@ -4,27 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Caso de Éxito: Blue AI & Instituto Éclat Parfait</title>
+    <!-- Ajout de Font Awesome pour les icônes modernes -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Importation de polices modernes */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
         :root {
-            --alan-blue: #0055FF;
-            --alan-blue-light: #E6F0FF;
-            --accent-orange: #f39c12;
-            --accent-orange-hover: #e67e22;
-            --text-dark: #1A202C;
-            --text-medium: #4A5568;
-            --text-light: #718096;
+            /* Palette de couleurs modernisée */
+            --alan-blue: #2563EB;
+            --alan-blue-light: #EFF6FF;
+            --alan-blue-gradient: linear-gradient(135deg, #2563EB 0%, #3B82F6 100%);
+            --accent-orange: #F59E0B;
+            --accent-orange-hover: #D97706;
+            --accent-orange-gradient: linear-gradient(135deg, #F59E0B 0%, #FBBF24 100%);
+            --text-dark: #1E293B;
+            --text-medium: #475569;
+            --text-light: #94A3B8;
             --bg-white: #FFFFFF;
-            --bg-soft-gray: #F7FAFC;
+            --bg-soft-gray: #F8FAFC;
             --border-color: #E2E8F0;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
-            --border-radius-md: 8px;
-            --border-radius-lg: 12px;
+            --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+            --card-shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            --border-radius-sm: 6px;
+            --border-radius-md: 10px;
+            --border-radius-lg: 16px;
+            --transition-standard: all 0.3s ease;
         }
 
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
         body {
-            font-family: 'Inter', 'system-ui', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Poppins', 'system-ui', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.65;
             margin: 0;
             padding: 0;
@@ -32,262 +41,582 @@
             color: var(--text-medium);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
         }
 
         .container {
             width: 90%;
-            max-width: 1024px;
+            max-width: 1140px;
             margin: 0 auto;
             padding: 20px 0;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Header / Hero Section */
+        /* Header / Hero Section - Modernisé */
         .hero {
             background-color: var(--bg-white);
-            padding: 80px 20px 60px 20px;
+            padding: 100px 20px 80px 20px;
             text-align: center;
             position: relative;
-            /* --- MOTIF DE BULLES DE DISCUSSION MIS À JOUR --- */
-            background-image: url("data:image/svg+xml,%3Csvg width='280' height='220' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 20 Q20 20 20 30 L20 45 Q20 55 30 55 L60 55 Q70 55 70 45 L70 30 Q70 20 60 20 L30 20 Z M20 30 L10 30 L20 40 Z' fill='rgba(0,0,0,0.03)'/%3E%3Cpath d='M150 60 Q140 60 140 70 L140 90 Q140 100 150 100 L190 100 Q200 100 200 90 L200 70 Q200 60 190 60 L150 60 Z M200 70 L210 70 L200 80 Z' fill='rgba(0,0,0,0.025)'/%3E%3Cpath d='M50 130 Q40 130 40 140 L40 170 Q40 180 50 180 L100 180 Q110 180 110 170 L110 140 Q110 130 100 130 L50 130 Z M40 140 L30 140 L40 150 Z' fill='rgba(0,0,0,0.02)'/%3E%3Cpath d='M200 150 Q190 150 190 160 L190 175 Q190 185 200 185 L230 185 Q240 185 240 175 L240 160 Q240 150 230 150 L200 150 Z M240 160 L250 160 L240 170 Z' fill='rgba(0,0,0,0.035)'/%3E%3Cpath d='M100 180 Q90 180 90 190 L90 205 Q90 215 100 215 L130 215 Q140 215 140 205 L140 190 Q140 180 130 180 L100 180 Z M140 190 L150 190 L140 200 Z' fill='rgba(0,0,0,0.028)'/%3E%3C/svg%3E");
-            background-repeat: repeat;
-            background-size: 300px auto; /* Taille de la tuile du motif, ajustez si besoin */
-            background-position: center center;
-            /* --- FIN DU MOTIF --- */
+            overflow: hidden;
+        }
+        
+        /* Arrière-plan avec formes modernes */
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 180%;
+            height: 100%;
+            top: 0;
+            left: -40%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.05) 0%, transparent 25%),
+                radial-gradient(circle at 80% 60%, rgba(245, 158, 11, 0.06) 0%, transparent 30%),
+                radial-gradient(circle at 40% 80%, rgba(37, 99, 235, 0.07) 0%, transparent 35%);
+            z-index: 0;
         }
 
         .hero .logo-placeholder {
-            font-size: 2.2em;
+            font-size: 2.4em;
             font-weight: 700;
             color: var(--alan-blue);
             margin-bottom: 25px;
             letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
         }
+        
+        .hero .logo-placeholder::after {
+            content: '';
+            position: absolute;
+            height: 4px;
+            width: 60%;
+            background: var(--accent-orange);
+            bottom: -5px;
+            left: 20%;
+            border-radius: 10px;
+        }
+        
         .hero h1 {
-            font-size: 2.6em;
+            font-size: 2.8em;
             color: var(--text-dark);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             font-weight: 700;
             line-height: 1.25;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
+        
         .hero .subtitle {
-            font-size: 1.15em;
+            font-size: 1.2em;
             color: var(--text-medium);
-            max-width: 650px;
-            margin: 0 auto 35px auto;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
         }
+        
+        /* Bouton CTA amélioré */
         .cta-button {
             display: inline-block;
-            background-color: var(--accent-orange);
+            background: var(--accent-orange-gradient);
             color: #fff;
-            padding: 14px 32px;
+            padding: 16px 36px;
             text-decoration: none;
-            font-size: 1.05em;
+            font-size: 1.1em;
             font-weight: 600;
             border-radius: var(--border-radius-md);
-            transition: background-color 0.2s ease, transform 0.2s ease;
-            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+            transition: var(--transition-standard);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
         }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: var(--transition-standard);
+        }
+        
         .cta-button:hover {
-            background-color: var(--accent-orange-hover);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
 
-        /* Section Styling */
-        section {
-            padding: 70px 20px;
+        /* Badge flottant */
+        .floating-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            background: var(--alan-blue-gradient);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.85em;
+            font-weight: 600;
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+            animation: float 3s ease-in-out infinite;
         }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        /* Section Styling - Modernisé */
+        section {
+            padding: 90px 20px;
+            position: relative;
+        }
+        
         section.alternate-bg {
             background-color: var(--bg-soft-gray);
             border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
+        
         section h2 {
             text-align: center;
-            font-size: 2em;
+            font-size: 2.2em;
             color: var(--text-dark);
-            margin-bottom: 45px;
-            font-weight: 600;
+            margin-bottom: 60px;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 20px;
         }
+        
+        section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+        
         section h2 .highlight-blue {
             color: var(--alan-blue);
-        }
-
-        /* Cards for Challenge & Solution */
-        .info-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-        }
-        .info-card {
-            background-color: var(--bg-white);
-            padding: 25px;
-            border-radius: var(--border-radius-lg);
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-            flex-basis: 280px;
-            flex-grow: 1;
-        }
-
-        @media (max-width: 599px) {
-            .info-card {
-                max-width: 100%;
-            }
-        }
-        @media (min-width: 600px) and (max-width: 959px) {
-            .info-card {
-                max-width: calc(50% - 12.5px);
-            }
-        }
-        @media (min-width: 960px) {
-             .info-card {
-                max-width: calc(33.333% - 17px);
-             }
-        }
-
-        .info-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0,0,0,0.07), 0 4px 6px -2px rgba(0,0,0,0.05);
-        }
-        .info-card .emoji-title {
-            font-size: 1.8em;
-            margin-right: 12px;
-            line-height: 1;
-        }
-        .info-card h3 {
-            font-size: 1.25em;
-            color: var(--text-dark);
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-        }
-        .info-card p {
-            font-size: 0.95em;
-            color: var(--text-medium);
-            margin-bottom: 0;
-        }
-        .info-card strong {
-            color: var(--alan-blue);
-            font-weight: 600;
-        }
-
-        /* Results Section */
-        .results-showcase {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 25px;
-            margin-bottom: 40px;
-        }
-        .result-box {
-            background-color: var(--alan-blue-light);
-            color: var(--alan-blue);
-            padding: 25px;
-            border-radius: var(--border-radius-lg);
-            text-align: center;
-            border: 1px solid var(--alan-blue);
-        }
-        .result-box .value {
-            font-size: 2.5em;
-            font-weight: 700;
-            margin-bottom: 5px;
-            display: block;
-            color: var(--alan-blue);
-        }
-        .result-box .label {
-            font-size: 0.9em;
-            color: var(--text-medium);
-        }
-
-        .roi-summary {
-            background-color: var(--bg-white);
-            padding: 30px;
-            border-radius: var(--border-radius-lg);
-            text-align: center;
-            box-shadow: var(--card-shadow);
-            border: 1px solid var(--border-color);
-        }
-        .roi-summary h3 {
-            font-size: 1.6em;
-            color: var(--text-dark);
-            margin-top: 0;
-            margin-bottom: 20px;
-        }
-        .roi-summary ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0 auto;
-            max-width: 400px;
-            text-align: left;
-        }
-        .roi-summary ul li {
-            font-size: 1.05em;
-            margin-bottom: 10px;
-            color: var(--text-medium);
-            display: flex;
-            justify-content: space-between;
-        }
-        .roi-summary ul li .figure {
-            font-weight: 600;
-            color: var(--alan-blue);
-        }
-        .roi-summary .total-roi {
-            font-size: 1.3em;
-            font-weight: 700;
-            color: var(--accent-orange);
-            margin-top: 20px;
-            display: block;
-        }
-
-        /* Testimonial Section */
-        .testimonial-wrapper {
-            max-width: 700px;
-            margin: 0 auto;
-            background-color: var(--alan-blue-light);
-            padding: 35px;
-            border-radius: var(--border-radius-lg);
             position: relative;
-            border: 1px solid var(--alan-blue);
+            z-index: 1;
         }
-        .testimonial-wrapper::before {
-            content: '“';
-            font-family: Georgia, serif;
-            font-size: 5em;
-            color: var(--alan-blue);
-            opacity: 0.2;
+        
+        section h2 .highlight-blue::after {
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 20px;
-            line-height: 1;
-        }
-        .testimonial-wrapper p.quote {
-            font-size: 1.1em;
-            color: var(--text-dark);
-            margin-bottom: 25px;
-            position: relative;
-            padding-left: 10px;
-            font-style: italic;
-        }
-        .testimonial-wrapper .author {
-            font-weight: 600;
-            text-align: right;
-            color: var(--alan-blue);
-            font-style: normal;
+            width: 100%;
+            height: 8px;
+            left: 0;
+            bottom: 4px;
+            background-color: rgba(37, 99, 235, 0.1);
+            z-index: -1;
+            border-radius: 4px;
         }
 
-        /* Why Choose Us Section (Features) */
-        .features-list {
+        /* Cards for Challenge & Solution - Modernisé */
+        .info-grid {
             display: flex;
             flex-wrap: wrap;
             gap: 30px;
             justify-content: center;
         }
+        
+        .info-card {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-standard);
+            flex-basis: 280px;
+            flex-grow: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .info-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: var(--alan-blue-gradient);
+            transition: var(--transition-standard);
+        }
+        
+        .info-card:hover::before {
+            height: 100%;
+        }
+
+        @media (max-width: 599px) {
+            .info-card {
+                max-width: 100%;
+            }
+        }
+        @media (min-width: 600px) and (max-width: 959px) {
+            .info-card {
+                max-width: calc(50% - 15px);
+            }
+        }
+        @media (min-width: 960px) {
+             .info-card {
+                max-width: calc(33.333% - 20px);
+             }
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .info-card .emoji-title {
+            font-size: 2.2em;
+            margin-right: 12px;
+            line-height: 1;
+            display: inline-block;
+            transition: var(--transition-standard);
+        }
+        
+        .info-card:hover .emoji-title {
+            transform: scale(1.2);
+        }
+        
+        .info-card h3 {
+            font-size: 1.3em;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+        
+        .info-card p {
+            font-size: 1em;
+            color: var(--text-medium);
+            margin-bottom: 0;
+            transition: var(--transition-standard);
+        }
+        
+        .info-card:hover p {
+            padding-left: 6px;
+        }
+        
+        .info-card strong {
+            color: var(--alan-blue);
+            font-weight: 600;
+        }
+
+        /* Results Section - Modernisé */
+        .results-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .result-box {
+            background-color: var(--bg-white);
+            padding: 35px 25px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            transition: var(--transition-standard);
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .result-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--alan-blue-gradient);
+            z-index: -1;
+        }
+        
+        .result-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .result-box .value {
+            font-size: 2.8em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+            color: var(--alan-blue);
+            background: var(--alan-blue-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .result-box .label {
+            font-size: 1em;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+
+        .roi-summary {
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-standard);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .roi-summary:hover {
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .roi-summary h3 {
+            font-size: 1.8em;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 25px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .roi-summary h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--accent-orange);
+            border-radius: 2px;
+        }
+        
+        .roi-summary ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0 auto;
+            max-width: 450px;
+            text-align: left;
+        }
+        
+        .roi-summary ul li {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: var(--text-medium);
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px dashed var(--border-color);
+        }
+        
+        .roi-summary ul li:last-child {
+            border-bottom: none;
+        }
+        
+        .roi-summary ul li .figure {
+            font-weight: 600;
+            color: var(--alan-blue);
+        }
+        
+        .roi-summary .total-roi {
+            font-size: 1.5em;
+            font-weight: 700;
+            margin-top: 30px;
+            padding: 15px 25px;
+            display: inline-block;
+            color: white;
+            background: var(--accent-orange-gradient);
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+            transition: var(--transition-standard);
+        }
+        
+        .roi-summary .total-roi:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(245, 158, 11, 0.4);
+        }
+
+        /* Testimonial Section - Modernisé */
+        .testimonial-carousel {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            position: relative;
+        }
+        
+        .testimonial-controls {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 25px;
+        }
+        
+        .testimonial-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: var(--border-color);
+            cursor: pointer;
+            transition: var(--transition-standard);
+        }
+        
+        .testimonial-dot.active {
+            background-color: var(--alan-blue);
+            transform: scale(1.3);
+        }
+        
+        .testimonial-wrapper {
+            max-width: 100%;
+            margin: 0 auto;
+            background-color: var(--bg-white);
+            padding: 40px;
+            border-radius: var(--border-radius-lg);
+            position: relative;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-standard);
+            overflow: hidden;
+        }
+        
+        .testimonial-wrapper:hover {
+            box-shadow: var(--card-shadow-hover);
+        }
+        
+        .testimonial-wrapper::before {
+            content: '"';
+            font-family: Georgia, serif;
+            font-size: 6em;
+            color: var(--alan-blue);
+            opacity: 0.1;
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            line-height: 1;
+        }
+        
+        .testimonial-wrapper::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--alan-blue-gradient);
+        }
+        
+        .testimonial-wrapper p.quote {
+            font-size: 1.2em;
+            color: var(--text-dark);
+            margin-bottom: 25px;
+            position: relative;
+            padding-left: 10px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+        
+        .testimonial-wrapper .author-box {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background-color: var(--alan-blue-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+            color: var(--alan-blue);
+        }
+        
+        .testimonial-wrapper .author-info {
+            text-align: left;
+        }
+        
+        .testimonial-wrapper .author {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-style: normal;
+            margin: 0;
+        }
+        
+        .testimonial-wrapper .author-title {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin: 0;
+        }
+
+        /* Why Choose Us Section (Features) - Modernisé */
+        .features-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            justify-content: center;
+        }
+        
         .feature-block {
             text-align: center;
-            flex-basis: 250px;
+            flex-basis: 260px;
             flex-grow: 1;
+            padding: 30px 20px;
+            background-color: var(--bg-white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-standard);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-block::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background: linear-gradient(180deg, var(--alan-blue-light) 0%, transparent 100%);
+            z-index: -1;
+            transition: var(--transition-standard);
+        }
+        
+        .feature-block:hover::before {
+            height: 100%;
         }
 
         @media (max-width: 599px) {
@@ -297,211 +626,872 @@
         }
         @media (min-width: 600px) and (max-width: 959px) {
             .feature-block {
-                max-width: calc(50% - 15px);
+                max-width: calc(50% - 17.5px);
             }
         }
         @media (min-width: 960px) {
              .feature-block {
-                max-width: calc(33.333% - 20px);
+                max-width: calc(33.333% - 23.33px);
              }
         }
-
+        
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-shadow-hover);
+        }
+        
         .feature-block .icon {
-            font-size: 2.2em;
-            margin-bottom: 15px;
+            font-size: 2.6em;
+            margin-bottom: 20px;
             display: inline-block;
             line-height: 1;
+            color: var(--alan-blue);
+            transition: var(--transition-standard);
         }
+        
+        .feature-block:hover .icon {
+            transform: scale(1.2);
+        }
+        
         .feature-block h3 {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: var(--text-dark);
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             font-weight: 600;
         }
+        
         .feature-block p {
-            font-size: 0.95em;
+            font-size: 1em;
             color: var(--text-medium);
+            margin-bottom: 0;
         }
 
-        /* Final CTA Section */
+        /* FAQ Section - Nouveau */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            background-color: var(--bg-white);
+            transition: var(--transition-standard);
+        }
+        
+        .faq-item:hover {
+            box-shadow: var(--card-shadow);
+        }
+        
+        .faq-question {
+            position: relative;
+            padding: 20px 50px 20px 20px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: var(--transition-standard);
+            display: flex;
+            align-items: center;
+        }
+        
+        .faq-question::after {
+            content: '\f107';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 20px;
+            transition: var(--transition-standard);
+        }
+        
+        .faq-item.active .faq-question::after {
+            transform: rotate(180deg);
+        }
+        
+        .faq-question i {
+            margin-right: 12px;
+            color: var(--alan-blue);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: var(--transition-standard);
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px 20px;
+            max-height: 1000px;
+        }
+        
+        .faq-item.active .faq-question {
+            background-color: var(--alan-blue-light);
+        }
+
+        /* Final CTA Section - Modernisé */
         .final-cta-section {
-            background-color: var(--alan-blue);
+            background: var(--alan-blue-gradient);
             color: #fff;
             text-align: center;
-            padding: 70px 20px;
+            padding: 90px 20px;
+            position: relative;
+            overflow: hidden;
         }
+        
+        .final-cta-section::before {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 100%;
+            top: 0;
+            left: -25%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08) 0%, transparent 25%);
+            z-index: 0;
+        }
+        
         .final-cta-section h2 {
             color: #fff;
-            margin-bottom: 15px;
-            font-size: 2em;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+            position: relative;
         }
+        
+        .final-cta-section h2::after {
+            background: white;
+        }
+        
         .final-cta-section p {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            opacity: 0.9;
-            max-width: 600px;
+            font-size: 1.2em;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
         }
+        
+        .final-cta-section .cta-button {
+            background: white;
+            color: var(--alan-blue);
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
+        }
+        
+        .final-cta-section .cta-button:hover {
+            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.4);
+            background: white;
+        }
+        
+        /* Trust Badges - Nouveau */
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .badge-item {
+            display: flex;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 8px 16px;
+            border-radius: 30px;
+        }
+        
+        .badge-item i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
 
-        /* Footer */
+        /* ROI Calculator - Nouveau */
+        .roi-calculator {
+            background-color: var(--bg-white);
+            padding: 30px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            max-width: 600px;
+            margin: 60px auto 0 auto;
+        }
+        
+        .roi-calculator h3 {
+            font-size: 1.5em;
+            text-align: center;
+            margin-top: 0;
+            margin-bottom: 25px;
+            color: var(--text-dark);
+        }
+        
+        .calculator-form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group label {
+            font-size: 0.9em;
+            color: var(--text-medium);
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 1em;
+            transition: var(--transition-standard);
+        }
+        
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--alan-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .calculate-btn {
+            grid-column: span 2;
+            background: var(--alan-blue-gradient);
+            color: white;
+            border: none;
+            padding: 12px;
+            font-size: 1em;
+            font-weight: 600;
+            border-radius: var(--border-radius-md);
+            cursor: pointer;
+            transition: var(--transition-standard);
+            margin-top: 10px;
+        }
+        
+        .calculate-btn:hover {
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+        
+        .calculator-result {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px dashed var(--border-color);
+            display: none;
+        }
+        
+        .calculator-result.show {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .result-heading {
+            font-size: 1.2em;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+            text-align: center;
+        }
+        
+        .result-figure {
+            font-size: 2em;
+            font-weight: 700;
+            color: var(--alan-blue);
+            text-align: center;
+            margin-bottom: 15px;
+            background: var(--alan-blue-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .result-summary {
+            font-size: 0.95em;
+            color: var(--text-medium);
+            text-align: center;
+        }
+
+        /* Footer - Modernisé */
         footer {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
             background-color: var(--bg-soft-gray);
-            color: var(--text-light);
-            font-size: 0.9em;
+            color: var(--text-medium);
+            font-size: 0.95em;
             border-top: 1px solid var(--border-color);
+            position: relative;
         }
+        
+        footer .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        footer .social-link {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--alan-blue);
+            text-decoration: none;
+            transition: var(--transition-standard);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        footer .social-link:hover {
+            background-color: var(--alan-blue);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+        }
+        
         footer p {
-            margin: 5px 0;
+            margin: 8px 0;
+        }
+        
+        footer .footer-nav {
+            margin: 15px 0;
+        }
+        
+        footer .footer-nav a {
+            color: var(--alan-blue);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: var(--transition-standard);
+        }
+        
+        footer .footer-nav a:hover {
+            color: var(--accent-orange);
+        }
+
+        /* Popup Newsletter - Nouveau */
+        .newsletter-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--bg-white);
+            padding: 25px;
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            max-width: 350px;
+            transform: translateY(150%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .newsletter-popup.show {
+            transform: translateY(0);
+        }
+        
+        .popup-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 1.2em;
+            color: var(--text-light);
+            cursor: pointer;
+            transition: var(--transition-standard);
+        }
+        
+        .popup-close:hover {
+            color: var(--text-dark);
+            transform: rotate(90deg);
+        }
+        
+        .popup-title {
+            font-size: 1.2em;
+            color: var(--text-dark);
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .popup-text {
+            font-size: 0.9em;
+            color: var(--text-medium);
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .newsletter-input {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-sm);
+            font-size: 0.9em;
+        }
+        
+        .newsletter-input:focus {
+            outline: none;
+            border-color: var(--alan-blue);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+        }
+        
+        .newsletter-btn {
+            background: var(--alan-blue);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: var(--border-radius-sm);
+            cursor: pointer;
+            transition: var(--transition-standard);
+        }
+        
+        .newsletter-btn:hover {
+            background: var(--alan-blue-gradient);
+        }
+
+        /* Back to top button - Nouveau */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--alan-blue-gradient);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: var(--transition-standard);
+            z-index: 999;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Animations au défilement - Nouveau */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.appear {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-left.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-right.appear {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animation des compteurs - Nouveau */
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Fancy Shape Divider - Nouveau */
+        .shape-divider {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+        }
+        
+        .shape-divider svg {
+            position: relative;
+            display: block;
+            width: calc(100% + 1.3px);
+            height: 70px;
+        }
+        
+        .shape-divider.top-divider {
+            top: 0;
+            bottom: auto;
+            transform: rotate(180deg);
+        }
+        
+        .shape-divider .shape-fill {
+            fill: var(--bg-white);
+        }
+        
+        .alternate-bg .shape-divider .shape-fill {
+            fill: var(--bg-soft-gray);
         }
 
         /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.1em;
+                font-size: 2.2em;
             }
+            
             .hero .subtitle {
-                font-size: 1em;
+                font-size: 1.05em;
             }
-            .hero {
-                background-size: 220px auto; /* Ajuster la taille du motif pour mobile */
-            }
+            
             section h2 {
-                font-size: 1.7em;
+                font-size: 1.8em;
             }
-            .results-showcase {
+            
+            .calculator-form {
                 grid-template-columns: 1fr;
             }
-            .testimonial-wrapper::before {
-                font-size: 4em;
+            
+            .calculate-btn {
+                grid-column: span 1;
+            }
+            
+            .testimonial-wrapper {
+                padding: 30px 20px;
+            }
+            
+            .floating-badge {
+                top: 20px;
+                right: 20px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+            }
+            
+            .newsletter-popup {
+                left: 20px;
+                right: 20px;
+                max-width: none;
+            }
+            
+            .roi-summary ul li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 80px 20px 60px 20px;
+            }
+            
+            .final-cta-section .cta-button {
+                width: 100%;
+            }
+            
+            .trust-badges {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .shape-divider svg {
+                height: 50px;
             }
         }
     </style>
 </head>
 <body>
+    <span class="floating-badge">
+        <i class="fas fa-star"></i> Nouveau case study
+    </span>
+    
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+    
     <header class="hero">
         <div class="container">
             <div class="logo-placeholder">Blue AI</div>
             <h1>Cómo el Instituto "Éclat Parfait" Revolucionó su Gestión y Aumentó Ingresos</h1>
             <p class="subtitle">Descubre cómo nuestra solución de IA para WhatsApp "Blue AI" por solo 200€/mes transformó desafíos en oportunidades de crecimiento.</p>
-            <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">Solicitar Demo Gratuita</a>
+            <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">
+                <i class="fas fa-calendar-check"></i> Solicitar Demo Gratuita
+            </a>
         </div>
     </header>
 
     <main>
         <section id="el-desafio" class="alternate-bg">
             <div class="container">
-                <h2>El <span class="highlight-blue">Desafío</span>: Una Carga Operativa Costosa</h2>
+                <h2 class="fade-in-up">El <span class="highlight-blue">Desafío</span>: Una Carga Operativa Costosa</h2>
                 <div class="info-grid">
-                    <div class="info-card">
+                    <div class="info-card fade-in-up">
                         <h3><span class="emoji-title">🤯</span>Sobrecarga de Trabajo</h3>
                         <p>15-20 llamadas y mensajes diarios interrumpían constantemente los tratamientos y la concentración del personal.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-up" data-delay="100">
                         <h3><span class="emoji-title">💸</span>Pérdidas por "No-Shows"</h3>
                         <p>Un promedio de <strong>8 citas perdidas al mes</strong>, resultando en una pérdida directa de <strong>480€</strong>.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-up" data-delay="200">
                         <h3><span class="emoji-title">📉</span>Oportunidades Desaprovechadas</h3>
                         <p>Entre 3 y 5 clientes potenciales no captados mensualmente por falta de respuesta inmediata fuera de horario.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-up" data-delay="300">
                         <h3><span class="emoji-title">⏳</span>Tiempo Malgastado</h3>
                         <p>Aproximadamente <strong>40 horas mensuales</strong> dedicadas a tareas administrativas repetitivas y de bajo valor.</p>
                     </div>
                 </div>
             </div>
+            <div class="shape-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
         </section>
 
         <section id="la-solucion">
+            <div class="shape-divider top-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                </svg>
+            </div>
             <div class="container">
-                <h2>La <span class="highlight-blue">Solución</span>: "Blue AI" - Tu Asistente Inteligente</h2>
+                <h2 class="fade-in-up">La <span class="highlight-blue">Solución</span>: "Blue AI" - Tu Asistente Inteligente</h2>
                 <div class="info-grid">
-                    <div class="info-card">
+                    <div class="info-card fade-in-left">
                         <h3><span class="emoji-title">🤖</span>Automatización 24/7</h3>
                         <p>Respuestas instantáneas a preguntas frecuentes (tarifas, horarios, servicios) vía WhatsApp, disponibles a toda hora.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-up" data-delay="100">
                         <h3><span class="emoji-title">🗓️</span>Gestión de Citas Eficaz</h3>
                         <p>Programación inteligente de citas, sincronizada con la agenda del salón, y envío de confirmaciones automáticas.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-right" data-delay="200">
                         <h3><span class="emoji-title">🔔</span>Recordatorios Inteligentes</h3>
                         <p>Reducción drástica de "no-shows" gracias a recordatorios personalizados enviados 48h y 24h antes de la cita.</p>
                     </div>
-                    <div class="info-card">
+                    <div class="info-card fade-in-left" data-delay="300">
                         <h3><span class="emoji-title">🎯</span>Marketing Dirigido</h3>
                         <p>Capacidad para difundir promociones y novedades de forma segmentada a la base de clientes existente.</p>
                     </div>
                 </div>
-                 <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--text-medium);">Todo esto por <strong>solo 200€ al mes</strong>, con una integración simple y rápida.</p>
+                <p style="text-align: center; margin-top: 40px; font-size: 1.1em; color: var(--text-medium); font-weight: 500;" class="fade-in-up" data-delay="400">
+                    Todo esto por <strong style="background: var(--accent-orange-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">solo 200€ al mes</strong>, con una integración simple y rápida.
+                </p>
+                
+                <!-- ROI Calculator - New element -->
+                <div class="roi-calculator fade-in-up" data-delay="500">
+                    <h3>Calcula tu ROI con Blue AI</h3>
+                    <div class="calculator-form">
+                        <div class="form-group">
+                            <label for="hoursWasted">Horas mensuales en tareas administrativas</label>
+                            <input type="number" id="hoursWasted" placeholder="Ej: 40" min="0" value="40">
+                        </div>
+                        <div class="form-group">
+                            <label for="hourlyRate">Valor de tu hora (€)</label>
+                            <input type="number" id="hourlyRate" placeholder="Ej: 15" min="0" value="15">
+                        </div>
+                        <div class="form-group">
+                            <label for="missedAppts">Citas perdidas al mes</label>
+                            <input type="number" id="missedAppts" placeholder="Ej: 8" min="0" value="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="apptValue">Valor promedio de cita (€)</label>
+                            <input type="number" id="apptValue" placeholder="Ej: 60" min="0" value="60">
+                        </div>
+                        <button type="button" class="calculate-btn" id="calculateRoi">
+                            <i class="fas fa-calculator"></i> Calcular mi ROI
+                        </button>
+                    </div>
+                    <div class="calculator-result" id="calculatorResult">
+                        <div class="result-heading">Tu ROI mensual con Blue AI:</div>
+                        <div class="result-figure" id="roiResult">600%</div>
+                        <div class="result-summary" id="roiSummary">Ahorras 1000€ al mes con una inversión de solo 200€</div>
+                    </div>
+                </div>
+            </div>
+            <div class="shape-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
             </div>
         </section>
 
         <section id="los-resultados" class="alternate-bg">
+            <div class="shape-divider top-divider">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" opacity=".25" class="shape-fill"></path>
+                    <path d="M0,0V15.81C13,36.92,27.64,56.86,47.69,72.05,99.41,111.27,165,111,224.58,91.58c31.15-10.15,60.09-26.07,89.67-39.8,40.92-19,84.73-46,130.83-49.67,36.26-2.85,70.9,9.42,98.6,31.56,31.77,25.39,62.32,62,103.63,73,40.44,10.79,81.35-6.69,119.13-24.28s75.16-39,116.92-43.05c59.73-5.85,113.28,22.88,168.9,38.84,30.2,8.66,59,6.17,87.09-7.5,22.43-10.89,48-26.93,60.65-49.24V0Z" opacity=".5" class="shape-fill"></path>
+                    <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" class="shape-fill"></path>
+                </svg>
+            </div>
             <div class="container">
-                <h2>Resultados <span class="highlight-blue">Impactantes</span> en Solo 3 Meses</h2>
+                <h2 class="fade-in-up">Resultados <span class="highlight-blue">Impactantes</span> en Solo 3 Meses</h2>
                 <div class="results-showcase">
-                    <div class="result-box">
-                        <span class="value">+600€</span>
+                    <div class="result-box fade-in-up">
+                        <span class="value" id="value1" data-val="600">+600€</span>
                         <span class="label">Ahorrados/mes (30h de tiempo recuperado)</span>
                     </div>
-                    <div class="result-box">
-                        <span class="value">+360€</span>
+                    <div class="result-box fade-in-up" data-delay="100">
+                        <span class="value" id="value2" data-val="360">+360€</span>
                         <span class="label">Recuperados/mes (reducción de no-shows)</span>
                     </div>
-                    <div class="result-box">
-                        <span class="value">+240€</span>
+                    <div class="result-box fade-in-up" data-delay="200">
+                        <span class="value" id="value3" data-val="240">+240€</span>
                         <span class="label">Generados/mes (nuevas reservas captadas)</span>
                     </div>
                 </div>
-                <div class="roi-summary">
+                <div class="roi-summary fade-in-up" data-delay="300">
                     <h3>Balance Financiero Impresionante</h3>
-                    <ul>
-                        <li>Ingresos Adicionales/Ahorrados: <span class="figure">1200€/mes</span></li>
-                        <li>Costo de Blue AI: <span class="figure">200€/mes</span></li>
-                        <li>Beneficio Neto Mensual: <span class="figure">1000€/mes</span></li>
+                    <ul id="roiList">
+                        <li class="roi-item">Ingresos Adicionales/Ahorrados: <span class="figure">1200€/mes</span></li>
+                        <li class="roi-item">Costo de Blue AI: <span class="figure">200€/mes</span></li>
+                        <li class="roi-item">Beneficio Neto Mensual: <span class="figure">1000€/mes</span></li>
                     </ul>
-                    <span class="total-roi">Retorno de la Inversión (ROI): ¡500%!</span>
+                    <span class="total-roi" id="totalRoi">Retorno de la Inversión (ROI): <i class="fas fa-arrow-up"></i> 500%!</span>
                 </div>
             </div>
         </section>
 
         <section id="testimonio">
             <div class="container">
-                <h2>Lo que Dice la <span class="highlight-blue">Gerente</span></h2>
-                <div class="testimonial-wrapper">
-                    <p class="quote">"La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!"</p>
-                    <p class="author">- Sophie, Gerente del Instituto "Éclat Parfait"</p>
+                <h2 class="fade-in-up">Lo que Dicen <span class="highlight-blue">Nuestros Clientes</span></h2>
+                
+                <div class="testimonial-carousel fade-in-up" data-delay="100">
+                    <div class="testimonial-wrapper">
+                        <p class="quote">"La integración de Blue AI ha sido una verdadera revolución para nosotros. Por 200€ al mes, no solo recuperamos tiempo valioso, sino que redujimos 'no-shows' y ganamos nuevos clientes. ¡El retorno supera con creces nuestras expectativas!"</p>
+                        <div class="author-box">
+                            <div class="author-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <div class="author-info">
+                                <p class="author">Sophie Martín</p>
+                                <p class="author-title">Gerente del Instituto "Éclat Parfait"</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-controls">
+                        <div class="testimonial-dot active"></div>
+                        <div class="testimonial-dot"></div>
+                        <div class="testimonial-dot"></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="por-que-blue-ai" class="alternate-bg">
+        <section id="faq" class="alternate-bg">
             <div class="container">
-                <h2>¿Por Qué Elegir <span class="highlight-blue">"Blue AI"</span> para Tu Salón?</h2>
+                <h2 class="fade-in-up">Preguntas <span class="highlight-blue">Frecuentes</span></h2>
+                
+                <div class="faq-container">
+                    <div class="faq-item fade-in-up">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            ¿Cómo se integra Blue AI con mi negocio actual?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Blue AI se integra de manera sencilla con tu cuenta comercial de WhatsApp existente. Nuestro equipo te guía durante todo el proceso de configuración, que generalmente toma menos de un día. No necesitas cambiar tus sistemas actuales, ya que Blue AI se adapta a ellos.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in-up" data-delay="100">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            ¿Qué pasa si ya tengo una recepcionista?
+                        </div>
+                        <div class="faq-answer">
+                            <p>Blue AI complementa perfectamente el trabajo de tu recepcionista, liberándola de tareas repetitivas para que pueda enfocarse en ofrecer un servicio más personalizado a los clientes presenciales. Además, Blue AI trabaja 24/7, respondiendo consultas incluso cuando tu negocio está cerrado.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in-up" data-delay="200">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            ¿Cuánto tiempo se tarda en ver resultados?
+                        </div>
+                        <div class="faq-answer">
+                            <p>La mayoría de nuestros clientes empiezan a ver resultados inmediatos en términos de tiempo ahorrado. En cuanto a reducción de no-shows y aumento de nuevas reservas, generalmente se observan mejoras significativas dentro del primer mes de uso.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item fade-in-up" data-delay="300">
+                        <div class="faq-question">
+                            <i class="fas fa-question-circle"></i>
+                            ¿Hay un contrato a largo plazo?
+                        </div>
+                        <div class="faq-answer">
+                            <p>No exigimos contratos a largo plazo. Nuestro servicio funciona con una suscripción mensual de 200€, y puedes cancelar en cualquier momento. Sin embargo, la mayoría de nuestros clientes continúan con nosotros después de ver los resultados positivos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="por-que-blue-ai">
+            <div class="container">
+                <h2 class="fade-in-up">¿Por Qué Elegir <span class="highlight-blue">"Blue AI"</span> para Tu Salón?</h2>
                 <div class="features-list">
-                    <div class="feature-block">
-                        <span class="icon">💰</span>
+                    <div class="feature-block fade-in-up">
+                        <span class="icon"><i class="fas fa-euro-sign"></i></span>
                         <h3>Aumenta Rentabilidad</h3>
-                        <p>Reduce costos operativos y maximiza tus ingresos.</p>
+                        <p>Reduce costos operativos y maximiza tus ingresos con automatización inteligente y captura de clientes 24/7.</p>
                     </div>
-                    <div class="feature-block">
-                        <span class="icon">⏱️</span>
+                    <div class="feature-block fade-in-up" data-delay="100">
+                        <span class="icon"><i class="fas fa-clock"></i></span>
                         <h3>Gana Tiempo Valioso</h3>
-                        <p>Automatiza tareas repetitivas y enfócate en tus clientes.</p>
+                        <p>Automatiza tareas repetitivas y enfócate en lo que realmente importa: dar un servicio excepcional a tus clientes.</p>
                     </div>
-                    <div class="feature-block">
-                        <span class="icon">😊</span>
+                    <div class="feature-block fade-in-up" data-delay="200">
+                        <span class="icon"><i class="fas fa-smile-beam"></i></span>
                         <h3>Mejora Experiencia Cliente</h3>
-                        <p>Disponibilidad 24/7 y comunicaciones fluidas y profesionales.</p>
+                        <p>Ofrece disponibilidad 24/7 y comunicaciones fluidas y profesionales que impresionan a tus clientes.</p>
                     </div>
-                    <div class="feature-block">
-                        <span class="icon">🧘</span>
+                    <div class="feature-block fade-in-up" data-delay="300">
+                        <span class="icon"><i class="fas fa-spa"></i></span>
                         <h3>Reduce el Estrés</h3>
-                        <p>Menos interrupciones y una organización optimizada.</p>
+                        <p>Disminuye interrupciones y organiza tu negocio de forma óptima para un ambiente de trabajo más tranquilo.</p>
+                    </div>
+                    <div class="feature-block fade-in-up" data-delay="400">
+                        <span class="icon"><i class="fas fa-chart-line"></i></span>
+                        <h3>Crecimiento Sostenible</h3>
+                        <p>Expande tu negocio sin aumentar proporcionalmente los costos administrativos y de gestión.</p>
+                    </div>
+                    <div class="feature-block fade-in-up" data-delay="500">
+                        <span class="icon"><i class="fas fa-shield-alt"></i></span>
+                        <h3>Sin Riesgos</h3>
+                        <p>Comienza sin inversión inicial y cancela en cualquier momento. El retorno de inversión está garantizado.</p>
                     </div>
                 </div>
             </div>
@@ -509,18 +1499,235 @@
 
         <section class="final-cta-section">
             <div class="container">
-                <h2>¿Listo para Transformar Tu Salón con Blue AI?</h2>
-                <p>Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.</p>
-                <a href="https://calendly.com/amaury-vergier/30min" class="cta-button" target="_blank">Solicitar una Demo Gratuita Ahora</a>
+                <h2 class="fade-in-up">¿Listo para Transformar Tu Salón con Blue AI?</h2>
+                <p class="fade-in-up" data-delay="100">Descubre el potencial de la inteligencia artificial para hacer crecer tu negocio de belleza de forma sencilla y rentable.</p>
+                <a href="https://calendly.com/amaury-vergier/30min" class="cta-button fade-in-up" data-delay="200" target="_blank">
+                    <i class="fas fa-calendar-check"></i> Solicitar una Demo Gratuita Ahora
+                </a>
+                
+                <div class="trust-badges fade-in-up" data-delay="300">
+                    <div class="badge-item">
+                        <i class="fas fa-check-circle"></i> Sin compromiso
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-rocket"></i> Implementación rápida
+                    </div>
+                    <div class="badge-item">
+                        <i class="fas fa-headset"></i> Soporte personalizado
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
         <div class="container">
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+            <div class="footer-nav">
+                <a href="#">Inicio</a>
+                <a href="#">Servicios</a>
+                <a href="#">Casos de Éxito</a>
+                <a href="#">Contacto</a>
+            </div>
             <p>&copy; 2025 BlueBerry Horizon LLC - Todos los derechos reservados.</p>
             <p>Blue AI - La solución inteligente para profesionales de la belleza.</p>
         </div>
     </footer>
+    
+    <div class="newsletter-popup" id="newsletterPopup">
+        <button class="popup-close" id="popupClose"><i class="fas fa-times"></i></button>
+        <h4 class="popup-title">¿Quieres más consejos para tu negocio?</h4>
+        <p class="popup-text">Suscríbete para recibir casos de éxito, consejos y ofertas especiales.</p>
+        <form class="newsletter-form">
+            <input type="email" class="newsletter-input" placeholder="Tu email">
+            <button type="submit" class="newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+        </form>
+    </div>
+    
+    <script>
+        // Animations au défilement
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fonction pour vérifier si un élément est visible dans la fenêtre
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Fonction pour animer les éléments visibles
+            function animateOnScroll() {
+                document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(function(element) {
+                    if (isInViewport(element)) {
+                        // Ajouter un délai si spécifié
+                        const delay = element.getAttribute('data-delay') || 0;
+                        setTimeout(function() {
+                            element.classList.add('appear');
+                        }, delay);
+                    }
+                });
+            }
+            
+            // Animation initiale et lors du défilement
+            animateOnScroll();
+            window.addEventListener('scroll', animateOnScroll);
+            
+            // Bouton "Retour en haut"
+            const backToTopBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.pageYOffset > 300) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            });
+            
+            backToTopBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+            
+            // FAQ accordéon
+            document.querySelectorAll('.faq-question').forEach(function(question) {
+                question.addEventListener('click', function() {
+                    const faqItem = this.parentNode;
+                    faqItem.classList.toggle('active');
+                });
+            });
+            
+            // Calculateur de ROI
+            const calculateBtn = document.getElementById('calculateRoi');
+            const calculatorResult = document.getElementById('calculatorResult');
+            
+            calculateBtn.addEventListener('click', function() {
+                const hoursWasted = parseFloat(document.getElementById('hoursWasted').value) || 0;
+                const hourlyRate = parseFloat(document.getElementById('hourlyRate').value) || 0;
+                const missedAppts = parseFloat(document.getElementById('missedAppts').value) || 0;
+                const apptValue = parseFloat(document.getElementById('apptValue').value) || 0;
+                
+                // Calcul des économies et revenus
+                const timeSavings = hoursWasted * hourlyRate;
+                const apptRecovery = missedAppts * apptValue * 0.75; // Récupération de 75% des RDV manqués
+                const newBusiness = apptValue * 4; // Estimation de 4 nouveaux clients
+                
+                const totalMonthly = timeSavings + apptRecovery + newBusiness;
+                const costOfBlueAI = 200;
+                const netBenefit = totalMonthly - costOfBlueAI;
+                const roi = (netBenefit / costOfBlueAI) * 100;
+                
+                // Affichage des résultats
+                document.getElementById('roiResult').textContent = Math.round(roi) + '%';
+                document.getElementById('roiSummary').textContent = `Ahorras ${Math.round(totalMonthly)}€ al mes con una inversión de solo ${costOfBlueAI}€`;
+                
+                calculatorResult.classList.add('show');
+                
+                // Animation des résultats
+                const resultFigure = document.getElementById('roiResult');
+                resultFigure.style.animation = 'none';
+                resultFigure.offsetHeight; // Force reflow
+                resultFigure.style.animation = 'fadeInUp 0.5s forwards';
+            });
+            
+            // Popup Newsletter (apparaît après 5 secondes)
+            const newsletterPopup = document.getElementById('newsletterPopup');
+            const popupClose = document.getElementById('popupClose');
+            
+            setTimeout(function() {
+                newsletterPopup.classList.add('show');
+            }, 5000);
+            
+            popupClose.addEventListener('click', function() {
+                newsletterPopup.classList.remove('show');
+            });
+            
+            // Animation des compteurs
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const statsObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const valueDisplays = document.querySelectorAll('.value');
+                        valueDisplays.forEach((valueDisplay) => {
+                            const startValue = 0;
+                            const endValue = parseInt(valueDisplay.getAttribute('data-val'));
+                            const duration = 2000;
+                            
+                            let startTime = null;
+                            
+                            function animateValue(timestamp) {
+                                if (!startTime) startTime = timestamp;
+                                const progress = timestamp - startTime;
+                                const percentage = Math.min(progress / duration, 1);
+                                
+                                const currentValue = Math.floor(percentage * (endValue - startValue) + startValue);
+                                valueDisplay.textContent = `+${currentValue}€`;
+                                
+                                if (percentage < 1) {
+                                    requestAnimationFrame(animateValue);
+                                }
+                            }
+                            
+                            requestAnimationFrame(animateValue);
+                        });
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const resultsSection = document.querySelector('.results-showcase');
+            if (resultsSection) {
+                statsObserver.observe(resultsSection);
+            }
+            
+            // Animation des éléments ROI
+            const roiObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const roiItems = document.querySelectorAll('.roi-item');
+                        roiItems.forEach((item, index) => {
+                            setTimeout(() => {
+                                item.style.opacity = 0;
+                                item.style.transform = 'translateX(-20px)';
+                                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                                
+                                setTimeout(() => {
+                                    item.style.opacity = 1;
+                                    item.style.transform = 'translateX(0)';
+                                }, 50);
+                            }, index * 300);
+                        });
+                        
+                        setTimeout(() => {
+                            const totalRoi = document.getElementById('totalRoi');
+                            totalRoi.style.transform = 'scale(1.1)';
+                            totalRoi.style.transition = 'transform 0.5s ease';
+                            
+                            setTimeout(() => {
+                                totalRoi.style.transform = 'scale(1)';
+                            }, 300);
+                        }, roiItems.length * 300);
+                        
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            const roiSummary = document.querySelector('.roi-summary');
+            if (roiSummary) {
+                roiObserver.observe(roiSummary);
+            }
+        });
+    </script>
 </body>
 </html>
